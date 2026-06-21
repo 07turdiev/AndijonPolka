@@ -18,11 +18,14 @@ function authHeader() {
     return null
 }
 
-// "DD.MM.YYYY" -> "YYYY-MM-DD"
+// "DD.MM.YYYY" or ISO "YYYY-MM-DD[THH:mm:ss]" -> "YYYY-MM-DD"
 function toIso(d) {
     if (!d) return null
-    const m = /^(\d{2})\.(\d{2})\.(\d{4})$/.exec(d)
-    return m ? `${m[3]}-${m[2]}-${m[1]}` : d
+    let m = /^(\d{2})\.(\d{2})\.(\d{4})/.exec(d)
+    if (m) return `${m[3]}-${m[2]}-${m[1]}`
+    m = /^(\d{4})-(\d{2})-(\d{2})/.exec(d)
+    if (m) return `${m[1]}-${m[2]}-${m[3]}`
+    return d
 }
 
 // Map the itg.madaniyat.uz response object into our participant shape

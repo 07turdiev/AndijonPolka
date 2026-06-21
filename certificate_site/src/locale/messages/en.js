@@ -45,6 +45,7 @@ const en = {
   m_male: 'Male',
   m_female: 'Female',
   m_join: 'Join',
+  m_save: 'Save',
   m_doneTitle: 'Congratulations!',
   m_doneText: 'You have been successfully added to the Andijan Polka participants list.',
   m_again: 'Register another',

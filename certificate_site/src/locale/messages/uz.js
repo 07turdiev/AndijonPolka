@@ -45,6 +45,7 @@ const uz = {
   m_male: "Erkak",
   m_female: "Ayol",
   m_join: "A'zo bo'lish",
+  m_save: "Saqlash",
   m_doneTitle: "Tabriklaymiz!",
   m_doneText: "Siz Andijon Polkasi ishtirokchilari ro'yxatiga muvaffaqiyatli qo'shildingiz.",
   m_again: "Yana birovni a'zo qilish",

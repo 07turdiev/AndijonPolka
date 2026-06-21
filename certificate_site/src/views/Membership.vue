@@ -3,6 +3,14 @@ import { ElMessage } from 'element-plus'
 
 const ANDIJON_REGION_ID = 17
 
+// Birth-certificate (Guvohnoma, documentTypeId 2) document series — chosen from a list
+const BIRTH_CERT_SERIES = [
+  'I-AN', 'I-BH', 'I-FR', 'I-GZ', 'I-HR', 'I-NA', 'I-NV', 'I-QD', 'I-QQ', 'I-SM', 'I-SR', 'I-SU', 'I-TN', 'I-TV',
+  'II-AN', 'II-BH', 'II-EP', 'II-FR', 'II-GZ', 'II-HR', 'II-KS', 'II-NA', 'II-NV', 'II-QD', 'II-QQ', 'II-SM', 'II-SR', 'II-SU', 'II-TN', 'II-TS', 'II-TV',
+  'III-AN', 'III-BH', 'III-FR', 'III-GZ', 'III-HR', 'III-KK', 'III-NA', 'III-NV', 'III-QD', 'III-QQ', 'III-SM', 'III-SR', 'III-SU', 'III-TN', 'III-TV',
+  'T', 'TA'
+]
+
 export default {
   name: 'Membership',
   data() {
@@ -14,12 +22,14 @@ export default {
       birth_date: '',
       person: null,
       isMinor: false,
+      alreadyRegistered: false,
       regions: [],
       districts: [],
       region_id: ANDIJON_REGION_ID,
       district_id: null,
       phone_number: '',
       phoneDisplay: '',
+      prevPhone: { text: '', digits: 0 },
       searching: false,
       submitting: false,
       done: false,
@@ -36,7 +46,8 @@ export default {
       ]
     },
     isPinfl() { return this.documentTypeId === 7 },
-    document() { return (this.series + this.number).toUpperCase() },
+    isBirthCert() { return this.documentTypeId === 2 },
+    birthCertSeries() { return BIRTH_CERT_SERIES },
     photoSrc() {
       if (!this.person || !this.person.photo) return ''
       return 'data:image/jpeg;base64,' + this.person.photo
@@ -57,6 +68,7 @@ export default {
       this.series = ''
       this.number = ''
       this.person = null
+      this.alreadyRegistered = false
     },
     onPinflInput(v) {
       this.pinfl = (v || '').replace(/\D/g, '').slice(0, 14)
@@ -67,18 +79,61 @@ export default {
     onNumberInput(v) {
       this.number = (v || '').replace(/\D/g, '').slice(0, 9)
     },
+    // Format raw input into DD.MM.YYYY (auto-insert dots)
+    formatDateStr(value) {
+      const d = (value || '').replace(/\D/g, '').slice(0, 8)
+      if (d.length >= 5) return d.slice(0, 2) + '.' + d.slice(2, 4) + '.' + d.slice(4)
+      if (d.length >= 3) return d.slice(0, 2) + '.' + d.slice(2)
+      return d
+    },
+    // Add auto-dot masking to the date picker's own input so typing AND the
+    // calendar both work in a single field.
+    attachMask() {
+      const root = this.$refs.dateRef && this.$refs.dateRef.$el
+      if (!root) return
+      const input = root.querySelector('input')
+      if (!input || input._masked) return
+      input._masked = true
+      input.addEventListener('input', () => {
+        if (this._fmt) return
+        const f = this.formatDateStr(input.value)
+        if (f !== input.value) {
+          this._fmt = true
+          input.value = f
+          try { input.setSelectionRange(f.length, f.length) } catch (e) { /* ignore */ }
+          // re-dispatch so el-date-picker reads the formatted value
+          input.dispatchEvent(new Event('input', { bubbles: true }))
+          this._fmt = false
+        }
+      })
+    },
+    validDate() {
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(this.birth_date)) return false
+      const [y, m, dd] = this.birth_date.split('-').map(Number)
+      if (m < 1 || m > 12 || dd < 1 || dd > 31) return false
+      const year = new Date().getFullYear()
+      return y >= 1900 && y <= year
+    },
+    // Phone: +998 (XX) XXX-XX-XX, with correct backspace through separators
     onPhoneInput(v) {
-      let d = (v || '').replace(/\D/g, '')
-      if (d.startsWith('998')) d = d.slice(3)
-      d = d.slice(0, 9)
-      let out = '+998'
-      if (d.length > 0) out += ' (' + d.slice(0, 2)
-      if (d.length >= 2) out += ')'
-      if (d.length > 2) out += ' ' + d.slice(2, 5)
-      if (d.length >= 5) out += '-' + d.slice(5, 7)
-      if (d.length >= 7) out += '-' + d.slice(7, 9)
+      let digits = (v || '').replace(/\D/g, '')
+      if (digits.startsWith('998')) digits = digits.slice(3)
+      digits = digits.slice(0, 9)
+      // Backspaced a separator (text got shorter but digit count unchanged) -> drop a digit
+      if (this.prevPhone.text && (v || '').length < this.prevPhone.text.length && digits.length === this.prevPhone.digits) {
+        digits = digits.slice(0, -1)
+      }
+      let out = ''
+      if (digits.length > 0) {
+        out = '+998 (' + digits.slice(0, 2)
+        if (digits.length >= 2) out += ')'
+        if (digits.length > 2) out += ' ' + digits.slice(2, 5)
+        if (digits.length >= 5) out += '-' + digits.slice(5, 7)
+        if (digits.length >= 7) out += '-' + digits.slice(7, 9)
+      }
       this.phoneDisplay = out
-      this.phone_number = d.length ? '+998' + d : ''
+      this.phone_number = digits.length ? '+998' + digits : ''
+      this.prevPhone = { text: out, digits: digits.length }
     },
     async loadRegions() {
       try {
@@ -105,7 +160,7 @@ export default {
       return p
     },
     validate() {
-      if (!this.birth_date) { ElMessage.warning(this.$t('m_warnDate')); return false }
+      if (!this.validDate()) { ElMessage.warning(this.$t('m_warnDate')); return false }
       if (this.isPinfl) {
         if (!/^\d{14}$/.test(this.pinfl)) { ElMessage.warning(this.$t('m_warnPinfl')); return false }
       } else {
@@ -116,13 +171,15 @@ export default {
     async onSearch() {
       if (!this.validate()) return
       this.searching = true
+      this.alreadyRegistered = false
       try {
         const res = await this.$axios.post('/search', this.identityPayload())
         const r = res && res.data && res.data.result
         if (res && res.data && res.data.success && r && r.person) {
-          if (r.already_registered) ElMessage.success(this.$t('m_already'))
           this.person = r.person
           this.isMinor = r.is_minor
+          this.alreadyRegistered = !!r.already_registered
+          if (this.alreadyRegistered) ElMessage.warning(this.$t('m_already'))
         } else {
           ElMessage.error((res && res.data && res.data.error) || this.$t('m_notFound'))
         }
@@ -133,8 +190,9 @@ export default {
         this.searching = false
       }
     },
-    async onRegister() {
+    async onSave() {
       if (!this.person) { ElMessage.warning(this.$t('m_searchFirst')); return }
+      if (this.alreadyRegistered) { ElMessage.warning(this.$t('m_already')); return }
       this.submitting = true
       try {
         const payload = {
@@ -154,9 +212,8 @@ export default {
         const status = err && err.response && err.response.status
         const msg = err && err.response && err.response.data && err.response.data.error
         if (status === 409) {
-          this.doneName = this.fullName
-          this.done = true
-          ElMessage.success(msg || this.$t('m_already'))
+          this.alreadyRegistered = true
+          ElMessage.warning(msg || this.$t('m_already'))
         } else {
           ElMessage.error(msg || this.$t('m_regErr'))
         }
@@ -170,12 +227,15 @@ export default {
       this.series = ''
       this.number = ''
       this.birth_date = ''
+      this.dateDisplay = ''
       this.person = null
       this.isMinor = false
+      this.alreadyRegistered = false
       this.region_id = ANDIJON_REGION_ID
       this.district_id = null
       this.phone_number = ''
       this.phoneDisplay = ''
+      this.prevPhone = { text: '', digits: 0 }
       this.done = false
       this.doneName = ''
       this.loadDistricts(ANDIJON_REGION_ID)
@@ -202,13 +262,8 @@ export default {
     <!-- FORM -->
     <div v-else class="m-page">
       <div class="m-head">
-        <div>
-          <h1>{{ $t('m_title') }}</h1>
-          <p class="crumb">{{ $t('m_crumb') }}</p>
-        </div>
-        <el-button type="success" size="large" :loading="submitting" :disabled="!person" @click="onRegister">
-          {{ $t('m_join') }}
-        </el-button>
+        <h1>{{ $t('m_title') }}</h1>
+        <p class="crumb">{{ $t('m_crumb') }}</p>
       </div>
 
       <!-- Search panel -->
@@ -229,7 +284,11 @@ export default {
           <template v-else>
             <div class="f f-sm">
               <label>{{ $t('m_series') }} <span>*</span></label>
-              <el-input :model-value="series" @update:model-value="onSeriesInput"
+              <el-select v-if="isBirthCert" v-model="series" filterable
+                :placeholder="$t('m_select')" size="large" style="width:100%">
+                <el-option v-for="s in birthCertSeries" :key="s" :label="s" :value="s" />
+              </el-select>
+              <el-input v-else :model-value="series" @update:model-value="onSeriesInput"
                 placeholder="AB" size="large" maxlength="3" @keyup.enter="onSearch" />
             </div>
             <div class="f">
@@ -241,9 +300,9 @@ export default {
 
           <div class="f">
             <label>{{ $t('m_birthDate') }} <span>*</span></label>
-            <el-date-picker v-model="birth_date" type="date" format="DD.MM.YYYY"
-              value-format="YYYY-MM-DD" :placeholder="$t('m_birthPh')" size="large"
-              style="width:100%" :disabled-date="(d) => d > new Date()" />
+            <el-date-picker ref="dateRef" v-model="birth_date" type="date"
+              format="DD.MM.YYYY" value-format="YYYY-MM-DD" :placeholder="$t('m_birthPh')"
+              size="large" style="width:100%" :disabled-date="(d) => d > new Date()" />
           </div>
 
           <div class="f f-btn">
@@ -252,50 +311,62 @@ export default {
         </div>
       </div>
 
-      <!-- Result panel -->
-      <div v-if="person" class="panel result">
-        <div class="result-fields">
-          <div class="grid">
-            <div class="ro"><label>{{ $t('m_lastName') }}</label><div class="val">{{ person.last_name }}</div></div>
-            <div class="ro"><label>{{ $t('m_firstName') }}</label><div class="val">{{ person.first_name }}</div></div>
-            <div class="ro"><label>{{ $t('m_middleName') }}</label><div class="val">{{ person.middle_name }}</div></div>
-            <div class="ro"><label>{{ $t('m_birthDate') }}</label><div class="val">{{ person.birth_date }}</div></div>
-            <div class="ro"><label>{{ $t('m_gender') }}</label><div class="val">{{ genderLabel }}</div></div>
-            <div class="ro"><label>{{ $t('m_nationality') }}</label><div class="val">{{ person.nationality }}</div></div>
-            <div class="ro"><label>{{ $t('m_citizenship') }}</label><div class="val">{{ person.citizenship }}</div></div>
-            <div class="ro"><label>{{ $t('m_pinfl') }}</label><div class="val">{{ person.pinfl }}</div></div>
-            <div class="ro">
-              <label>{{ $t('m_document') }}</label>
-              <div class="val">{{ person.document }} <el-tag v-if="isMinor" type="warning" size="small">{{ $t('m_minor') }}</el-tag></div>
+      <!-- Result panel (after search finds a person) -->
+      <div v-if="person" class="panel result-panel">
+        <el-alert v-if="alreadyRegistered" type="warning" :closable="false" show-icon
+          :title="$t('m_already')" style="margin-bottom: 16px" />
+
+        <div class="result">
+          <div class="result-fields">
+            <div class="grid">
+              <div class="ro"><label>{{ $t('m_lastName') }}</label><div class="val">{{ person.last_name }}</div></div>
+              <div class="ro"><label>{{ $t('m_firstName') }}</label><div class="val">{{ person.first_name }}</div></div>
+              <div class="ro"><label>{{ $t('m_middleName') }}</label><div class="val">{{ person.middle_name }}</div></div>
+              <div class="ro"><label>{{ $t('m_birthDate') }}</label><div class="val">{{ person.birth_date }}</div></div>
+              <div class="ro"><label>{{ $t('m_gender') }}</label><div class="val">{{ genderLabel }}</div></div>
+              <div class="ro"><label>{{ $t('m_nationality') }}</label><div class="val">{{ person.nationality }}</div></div>
+              <div class="ro"><label>{{ $t('m_citizenship') }}</label><div class="val">{{ person.citizenship }}</div></div>
+              <div class="ro"><label>{{ $t('m_pinfl') }}</label><div class="val">{{ person.pinfl }}</div></div>
+              <div class="ro">
+                <label>{{ $t('m_document') }}</label>
+                <div class="val">{{ person.document }} <el-tag v-if="isMinor" type="warning" size="small">{{ $t('m_minor') }}</el-tag></div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="grid">
+              <div class="ro">
+                <label>{{ $t('m_region') }}</label>
+                <el-select v-model="region_id" :placeholder="$t('m_select')" size="large" style="width:100%" filterable @change="onRegionChange">
+                  <el-option v-for="r in regions" :key="r.region_id" :label="r.name_uz" :value="r.region_id" />
+                </el-select>
+              </div>
+              <div class="ro">
+                <label>{{ $t('m_district') }}</label>
+                <el-select v-model="district_id" :placeholder="$t('m_select')" size="large" style="width:100%" clearable filterable :disabled="!region_id">
+                  <el-option v-for="d in districts" :key="d.district_id" :label="d.name_uz" :value="d.district_id" />
+                </el-select>
+              </div>
+              <div class="ro">
+                <label>{{ $t('m_phone') }}</label>
+                <el-input :model-value="phoneDisplay" @update:model-value="onPhoneInput"
+                  placeholder="+998 (__) ___-__-__" size="large" inputmode="numeric" />
+              </div>
             </div>
           </div>
 
-          <div class="divider"></div>
-
-          <div class="grid">
-            <div class="ro">
-              <label>{{ $t('m_region') }}</label>
-              <el-select v-model="region_id" :placeholder="$t('m_select')" size="large" style="width:100%" filterable @change="onRegionChange">
-                <el-option v-for="r in regions" :key="r.region_id" :label="r.name_uz" :value="r.region_id" />
-              </el-select>
-            </div>
-            <div class="ro">
-              <label>{{ $t('m_district') }}</label>
-              <el-select v-model="district_id" :placeholder="$t('m_select')" size="large" style="width:100%" clearable filterable :disabled="!region_id">
-                <el-option v-for="d in districts" :key="d.district_id" :label="d.name_uz" :value="d.district_id" />
-              </el-select>
-            </div>
-            <div class="ro">
-              <label>{{ $t('m_phone') }}</label>
-              <el-input :model-value="phoneDisplay" @update:model-value="onPhoneInput"
-                placeholder="+998 (__) ___-__-__" size="large" inputmode="numeric" />
-            </div>
+          <div class="result-photo">
+            <img v-if="photoSrc" :src="photoSrc" alt="photo" />
+            <div v-else class="no-photo">Foto</div>
           </div>
         </div>
 
-        <div class="result-photo">
-          <img v-if="photoSrc" :src="photoSrc" alt="photo" />
-          <div v-else class="no-photo">Foto</div>
+        <!-- Save (only visible once a person is found) -->
+        <div class="save-row">
+          <el-button type="success" size="large" :loading="submitting" :disabled="alreadyRegistered" @click="onSave">
+            {{ $t('m_save') }}
+          </el-button>
         </div>
       </div>
     </div>
@@ -310,7 +381,7 @@ export default {
 @media (max-width: 1199px) and (min-width: 834px) { .m-wrap { width: 754px; } }
 @media (max-width: 833px) { .m-wrap { width: 100%; padding: 0 16px; } }
 .m-page { padding: 28px 0 60px; }
-.m-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; gap: 16px; flex-wrap: wrap; }
+.m-head { margin-bottom: 20px; }
 .m-head h1 { margin: 0; font-size: 24px; color: #1e293b; }
 .crumb { margin: 4px 0 0; color: #94a3b8; font-size: 14px; }
 
@@ -319,11 +390,17 @@ export default {
 .search-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: flex-end; }
 .f { display: flex; flex-direction: column; flex: 1 1 200px; min-width: 160px; }
 .f-type { flex: 1 1 240px; }
-.f-sm { flex: 0 1 120px; min-width: 100px; }
+.f-sm { flex: 0 1 150px; min-width: 130px; }
 .f-btn { flex: 0 0 auto; }
 .f-btn .el-button { height: 40px; }
 .f label, .ro label { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 6px; }
 .f label span, .ro label span { color: #ef4444; }
+
+/* Birth date: masked typing input + calendar icon (opens localized picker) */
+.date-wrap { position: relative; }
+.date-wrap .date-overlay { position: absolute; left: 0; bottom: 0; width: 100%; opacity: 0; pointer-events: none; }
+.cal-btn { display: inline-flex; align-items: center; color: #64748b; cursor: pointer; }
+.cal-btn:hover { color: #1d4ed8; }
 
 .result { display: flex; gap: 24px; align-items: flex-start; }
 .result-fields { flex: 1; min-width: 0; }
@@ -340,6 +417,9 @@ export default {
 .result-photo img { width: 170px; height: 210px; object-fit: cover; border-radius: 10px; border: 1px solid #e2e8f0; }
 .no-photo { width: 170px; height: 210px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; border: 1px dashed #cbd5e1; border-radius: 10px; color: #94a3b8; font-size: 13px; }
 
+.save-row { display: flex; justify-content: flex-end; margin-top: 22px; padding-top: 18px; border-top: 1px solid #eef2f7; }
+.save-row .el-button { min-width: 200px; }
+
 .done-card { max-width: 520px; margin: 60px auto; background: #fff; border-radius: 16px; padding: 36px; text-align: center; box-shadow: 0 10px 30px rgba(30, 58, 138, .12); }
 .done-card .check { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 14px; background: #16a34a; color: #fff; font-size: 36px; line-height: 64px; }
 .done-card h2 { margin: 0 0 6px; color: #1e293b; }
@@ -351,9 +431,7 @@ export default {
 }
 @media (max-width: 640px) {
   .m-page { padding: 16px 0 48px; }
-  .m-head { flex-direction: column; align-items: stretch; gap: 12px; }
   .m-head h1 { font-size: 21px; }
-  .m-head > .el-button { width: 100%; }
   .panel { padding: 16px; }
   .search-row { gap: 12px; }
   .f, .f-type, .f-sm { flex: 1 1 100%; min-width: 0; }
@@ -363,5 +441,7 @@ export default {
   .result-fields { width: 100%; }
   .grid { grid-template-columns: 1fr; }
   .result-photo { flex: 0 0 auto; }
+  .save-row { justify-content: stretch; }
+  .save-row .el-button { width: 100%; }
 }
 </style>
