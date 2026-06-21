@@ -1,0 +1,24 @@
+# Andijon Polka backend API — systemd service
+# Joylash:  sudo cp deploy/andijon-polka-api.service /etc/systemd/system/
+#           sudo systemctl daemon-reload
+#           sudo systemctl enable --now andijon-polka-api
+#
+# User va WorkingDirectory ni o'zingizникiga moslang. ExecStart dagi node yo'lini
+# `which node` bilan tekshiring (odatda /usr/bin/node).
+
+[Unit]
+Description=Andijon Polka API (Node.js)
+After=network.target postgresql.service
+
+[Service]
+Type=simple
+User=markaz
+WorkingDirectory=/home/markaz/AndijonPolka/certificate_backend
+ExecStart=/usr/bin/node index.js
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+# Qolgan sozlamalar .env faylidan (dotenv) o'qiladi
+
+[Install]
+WantedBy=multi-user.target

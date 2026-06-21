@@ -13,9 +13,7 @@ Frontendlar nisbiy `/api/...` yo'lini ishlatadi — shuning uchun domen/IP o'zga
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt-get install -y nodejs
 node -v        # v20.x bo'lishi kerak
-
-# pm2 (backendni doimiy ishlatish uchun)
-sudo npm install -g pm2
+which node     # ExecStart uchun yo'l (odatda /usr/bin/node)
 ```
 
 ## 1. PostgreSQL bazasi (bir marta)
@@ -56,13 +54,16 @@ PASSPORT_API_LOGIN="@madaniyat$login"
 PASSPORT_API_PASSWORD="#parol..."
 ```
 
-Ishga tushiring:
+Ishga tushiring (systemd):
 
 ```bash
-pm2 start ecosystem.config.js
-pm2 save
-pm2 startup        # chiqgan buyruqni nusxalab bajaring (server qayta yuklanganда avto-start)
-pm2 logs andijon-polka-api --lines 30   # "server ready on 5000" + "real rejim ulandi" ko'rinsin
+sudo cp ~/AndijonPolka/deploy/andijon-polka-api.service /etc/systemd/system/
+# Kerak bo'lsa User/WorkingDirectory/ExecStart ni tahrirlang:
+sudo nano /etc/systemd/system/andijon-polka-api.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now andijon-polka-api
+sudo systemctl status andijon-polka-api          # "active (running)" bo'lishi kerak
+journalctl -u andijon-polka-api -n 30 --no-pager # "server ready on 5000" + "real rejim ulandi" ko'rinsin
 ```
 
 Birinchi ishga tushirishда jadvallar, viloyat/tuman va default admin avtomatik yaratiladi.
@@ -115,7 +116,7 @@ cd ~/AndijonPolka
 git pull
 
 # backend o'zgargan bo'lsa:
-cd certificate_backend && npm install --omit=dev && pm2 restart andijon-polka-api
+cd certificate_backend && npm install --omit=dev && sudo systemctl restart andijon-polka-api
 
 # sayt o'zgargan bo'lsa:
 cd ~/AndijonPolka/certificate_site && npm install && npm run build
@@ -129,9 +130,9 @@ Frontend qayta build qilingach nginx'ni qayta yuklash shart emas (statik fayllar
 ## Foydali buyruqlar
 
 ```bash
-pm2 status                       # backend holati
-pm2 logs andijon-polka-api       # backend loglari
-pm2 restart andijon-polka-api    # qayta ishga tushirish
+sudo systemctl status andijon-polka-api     # backend holati
+journalctl -u andijon-polka-api -f          # backend loglari (jonli)
+sudo systemctl restart andijon-polka-api    # qayta ishga tushirish
 sudo tail -f /var/log/nginx/error.log
 ```
 
