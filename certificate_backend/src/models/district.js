@@ -1,8 +1,12 @@
 module.exports = async (sequelize, Sequelize) => {
-    return sequelize.define("regions", {
-        region_id: {
+    return sequelize.define("districts", {
+        district_id: {
             type: Sequelize.INTEGER,
             primaryKey: true
+        },
+        region_id: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         },
         name_uz: {
             type: Sequelize.STRING,

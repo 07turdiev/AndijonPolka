@@ -1,0 +1,2306 @@
+﻿[
+    {
+        "id":  2323,
+        "region_id":  23,
+        "name_uz":  "CHIMBOY SHAHRI",
+        "name_ru":  "ЧИМБОЙ ГОРОД",
+        "name_en":  "CHIMBOY TOWN",
+        "name_uz_cyr":  "ЧИМБОЙ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1001,
+        "region_id":  10,
+        "name_uz":  "UCHTEPA TUMANI",
+        "name_ru":  "УЧТЕПА ТУМАН",
+        "name_en":  "UCHTEPA DISTRICT",
+        "name_uz_cyr":  "УЧТЕПА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1202,
+        "region_id":  12,
+        "name_uz":  "GULISTON TUMANI",
+        "name_ru":  "ГУЛИСТАНСКИЙ ТУМАН",
+        "name_en":  "GULISTON DISTRICT",
+        "name_uz_cyr":  "ГУЛИСТОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1203,
+        "region_id":  12,
+        "name_uz":  "BOYOVUT TUMANI",
+        "name_ru":  "БАЁВУТСКИЙ ТУМАН",
+        "name_en":  "BOYOVUT DISTRICT",
+        "name_uz_cyr":  "БОЁВУТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1204,
+        "region_id":  12,
+        "name_uz":  "MEXNATOBOD TUMANI",
+        "name_ru":  "МАХНАТАБАДСКИЙ ТУМАН",
+        "name_en":  "MEKHNATOBOD DISTRICT",
+        "name_uz_cyr":  "МЕХНАТОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1205,
+        "region_id":  12,
+        "name_uz":  "XOVOS TUMANI",
+        "name_ru":  "ХАВАСТСКИЙ ТУМАН",
+        "name_en":  "XOVOS DISTRICT",
+        "name_uz_cyr":  "ХОВОС ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1206,
+        "region_id":  12,
+        "name_uz":  "MIRZAOBOD TUMANI",
+        "name_ru":  "МИРЗААБАДСКИЙ ТУМАН",
+        "name_en":  "MIRZAOBOD DISTRICT",
+        "name_uz_cyr":  "МИРЗАОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1207,
+        "region_id":  12,
+        "name_uz":  "OQOLTIN TUMANI",
+        "name_ru":  "ОКОЛТИНСКИЙ ТУМАН",
+        "name_en":  "OKOLTIN DISTRICT",
+        "name_uz_cyr":  "ОҚОЛТИН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1208,
+        "region_id":  12,
+        "name_uz":  "SH.RASHIDOV TUMANI",
+        "name_ru":  "Ш.РАШИДОВСКИЙ ТУМАН",
+        "name_en":  "SH.RASHIDOV DISTRICT",
+        "name_uz_cyr":  "Ш.РАШИДОВ ТУМАНИ",
+        "active":  0
+    },
+    {
+        "id":  1209,
+        "region_id":  12,
+        "name_uz":  "SIRDARYO TUMANI",
+        "name_ru":  "СЫРДАРЬИНСКИЙ ТУМАН",
+        "name_en":  "SIRDARYO DISTRICT",
+        "name_uz_cyr":  "СИРДАРЁ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1210,
+        "region_id":  12,
+        "name_uz":  "GULISTON SHAHRI",
+        "name_ru":  "ГУЛИСТОН ГОРОД",
+        "name_en":  "GULISTAN TOWN",
+        "name_uz_cyr":  "ГУЛИСТОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1211,
+        "region_id":  12,
+        "name_uz":  "SIRDARYO SHAHRI",
+        "name_ru":  "СИРДАРЁ ГОРОД",
+        "name_en":  "SIRDARYO TOWN",
+        "name_uz_cyr":  "СИРДАРЁ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1212,
+        "region_id":  12,
+        "name_uz":  "SHIRIN SHAHRI",
+        "name_ru":  "ШИРИН ГОРОД",
+        "name_en":  "SHIRIN TOWN",
+        "name_uz_cyr":  "ШИРИН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1213,
+        "region_id":  12,
+        "name_uz":  "YANGIYER SHAHRI",
+        "name_ru":  "ЯНГИЕР ГОРОД",
+        "name_en":  "YANGIYER TOWN",
+        "name_uz_cyr":  "ЯНГИЕР ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1214,
+        "region_id":  12,
+        "name_uz":  "BAXT SHAHRI",
+        "name_ru":  "БАХТ ГОРОД",
+        "name_en":  "BAXT TOWN",
+        "name_uz_cyr":  "БАХТ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1301,
+        "region_id":  13,
+        "name_uz":  "ZARBDOR TUMANI",
+        "name_ru":  "ЗАРБДАРСКИЙ ТУМАН",
+        "name_en":  "ZARBDOR DISTRICT",
+        "name_uz_cyr":  "ЗАРБДОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1302,
+        "region_id":  13,
+        "name_uz":  "DO‘STLIK TUMANI",
+        "name_ru":  "ДУСТЛИКСКИЙ ТУМАН",
+        "name_en":  "DUSTLIK DISTRICT",
+        "name_uz_cyr":  "ДЎСТЛИК ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1304,
+        "region_id":  13,
+        "name_uz":  "FORISH TUMANI",
+        "name_ru":  "ФАРИШСКИЙ ТУМАН",
+        "name_en":  "FORISH DISTRICT",
+        "name_uz_cyr":  "ФОРИШ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1305,
+        "region_id":  13,
+        "name_uz":  "JIZZAX TUMANI",
+        "name_ru":  "ДЖИЗАКСКИЙ ТУМАН",
+        "name_en":  "JIZZAKH DISTRICT",
+        "name_uz_cyr":  "ЖИЗЗАХ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1306,
+        "region_id":  13,
+        "name_uz":  "G‘ALLAOROL TUMANI",
+        "name_ru":  "ГАЛЛЯАРАЛСКИЙ ТУМАН",
+        "name_en":  "GALLAOROL DISTRICT",
+        "name_uz_cyr":  "ҒАЛЛАОРОЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1307,
+        "region_id":  13,
+        "name_uz":  "BAXMAL TUMANI",
+        "name_ru":  "БАХМАЛСКИЙ ТУМАН",
+        "name_en":  "BAKHMAL DISTRICT",
+        "name_uz_cyr":  "БАХМАЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1308,
+        "region_id":  13,
+        "name_uz":  "PAXTAKOR TUMANI",
+        "name_ru":  "ПАХТАКОРСКИЙ ТУМАН",
+        "name_en":  "PAKHTAKOR DISTRICT",
+        "name_uz_cyr":  "ПАХТАКОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1309,
+        "region_id":  13,
+        "name_uz":  "ZAFAROBOD TUMANI",
+        "name_ru":  "ЗАФАРАБАДСКИЙ ТУМАН",
+        "name_en":  "ZAFAROBOD DISTRICT",
+        "name_uz_cyr":  "ЗАФАРОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1310,
+        "region_id":  13,
+        "name_uz":  "ARNASOY TUMANI",
+        "name_ru":  "АРНАСАЙСКИЙ ТУМАН",
+        "name_en":  "ARNASOY DISTRICT",
+        "name_uz_cyr":  "АРНАСОЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1311,
+        "region_id":  13,
+        "name_uz":  "ZOMIN TUMANI",
+        "name_ru":  "ЗОМИНСКИЙ ТУМАН",
+        "name_en":  "ZOMIN DISTRICT",
+        "name_uz_cyr":  "ЗОМИН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1312,
+        "region_id":  13,
+        "name_uz":  "MIRZACHO‘L TUMANI",
+        "name_ru":  "МИРЗАЧУЛЬСКИЙ ТУМАН",
+        "name_en":  "MIRZACHUL DISTRICT",
+        "name_uz_cyr":  "МИРЗАЧЎЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1313,
+        "region_id":  13,
+        "name_uz":  "YANGIOBOD TUMANI",
+        "name_ru":  "ЯНГИАБАДСКИЙ ТУМАН",
+        "name_en":  "YANGIOBOD DISTRICT",
+        "name_uz_cyr":  "ЯНГИОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1314,
+        "region_id":  13,
+        "name_uz":  "JIZZAX SHAHRI",
+        "name_ru":  "ЖИЗЗАХ ГОРОД",
+        "name_en":  "DJIZAK TOWN",
+        "name_uz_cyr":  "ЖИЗЗАХ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1401,
+        "region_id":  14,
+        "name_uz":  "NARPAY TUMANI",
+        "name_ru":  "НАРПАЙСКИЙ ТУМАН",
+        "name_en":  "NARPAY DISTRICT",
+        "name_uz_cyr":  "НАРПАЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1402,
+        "region_id":  14,
+        "name_uz":  "NUROBOD TUMANI",
+        "name_ru":  "НУРАБАДСКИЙ ТУМАН",
+        "name_en":  "NUROBOD DISTRICT",
+        "name_uz_cyr":  "НУРОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1403,
+        "region_id":  14,
+        "name_uz":  "JOMBOY TUMANI",
+        "name_ru":  "ДЖАМБАЙСКИЙ ТУМАН",
+        "name_en":  "JOMBOY DISTRICT",
+        "name_uz_cyr":  "ЖОМБОЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1404,
+        "region_id":  14,
+        "name_uz":  "URGUT TUMANI",
+        "name_ru":  "УРГУТСКИЙ ТУМАН",
+        "name_en":  "URGUT DISTRICT",
+        "name_uz_cyr":  "УРГУТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1405,
+        "region_id":  14,
+        "name_uz":  "PAXTACHI TUMANI",
+        "name_ru":  "ПАХТАЧИНСКИЙ ТУМАН",
+        "name_en":  "PAKHTACHI DISTRICT",
+        "name_uz_cyr":  "ПАХТАЧИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1406,
+        "region_id":  14,
+        "name_uz":  "KATTAQO‘RG‘ON TUMANI",
+        "name_ru":  "КАТТАКУРГАНСКИЙ ТУМАН",
+        "name_en":  "KATTAKURGON DISTRICT",
+        "name_uz_cyr":  "КАТТАҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1407,
+        "region_id":  14,
+        "name_uz":  "OQDARYO TUMANI",
+        "name_ru":  "АКДАРЬИНСКИЙ ТУМАН",
+        "name_en":  "OKDARYO DISTRICT",
+        "name_uz_cyr":  "ОҚДАРЁ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1408,
+        "region_id":  14,
+        "name_uz":  "ISHTIXON TUMANI",
+        "name_ru":  "ИШТИХАНСКИЙ ТУМАН",
+        "name_en":  "ISHTIKHON DISTRICT",
+        "name_uz_cyr":  "ИШТИХОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1915,
+        "region_id":  19,
+        "name_uz":  "BANDIXON TUMANI",
+        "name_ru":  "БАНДИХАНСКИЙ ТУМАН",
+        "name_en":  "BANDIKHON DISTRICT",
+        "name_uz_cyr":  "БАНДИХОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1916,
+        "region_id":  19,
+        "name_uz":  "TERMIZ SHAHRI",
+        "name_ru":  "ТЕРМИЗ ГОРОД",
+        "name_en":  "TEMIZ TOWN",
+        "name_uz_cyr":  "ТЕРМИЗ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1917,
+        "region_id":  19,
+        "name_uz":  "DENOV SHAHRI",
+        "name_ru":  "ДЕНОВ ГОРОД",
+        "name_en":  "DENOV TOWN",
+        "name_uz_cyr":  "ДЕНОВ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2001,
+        "region_id":  20,
+        "name_uz":  "ROMITON TUMANI",
+        "name_ru":  "РОМИТОНСКИЙ ТУМАН",
+        "name_en":  "ROMITON DISTRICT",
+        "name_uz_cyr":  "РОМИТОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2002,
+        "region_id":  20,
+        "name_uz":  "VOBKENT TUMANI",
+        "name_ru":  "ВОБКЕНТСКИЙ ТУМАН",
+        "name_en":  "VOBKENT DISTRICT",
+        "name_uz_cyr":  "ВОБКЕНТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2003,
+        "region_id":  20,
+        "name_uz":  "PESHKU TUMANI",
+        "name_ru":  "ПЕШКУСКИЙ ТУМАН",
+        "name_en":  "PESHKU DISTRICT",
+        "name_uz_cyr":  "ПЕШКУ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2004,
+        "region_id":  20,
+        "name_uz":  "OLOT TUMANI",
+        "name_ru":  "АЛАТСКИЙ ТУМАН",
+        "name_en":  "OLOT DISTRICT",
+        "name_uz_cyr":  "ОЛОТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2005,
+        "region_id":  20,
+        "name_uz":  "JONDOR TUMANI",
+        "name_ru":  "ЖОНДОРСКИЙ ТУМАН",
+        "name_en":  "JONDOR DISTRICT",
+        "name_uz_cyr":  "ЖОНДОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2006,
+        "region_id":  20,
+        "name_uz":  "QORAKO‘L TUMANI",
+        "name_ru":  "КАРАКУЛЬСКИЙ ТУМАН",
+        "name_en":  "KORAKUL DISTRICT",
+        "name_uz_cyr":  "ҚОРАКЎЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2007,
+        "region_id":  20,
+        "name_uz":  "SHOFIRKON TUMANI",
+        "name_ru":  "ШОФИРКОНСКИЙ ТУМАН",
+        "name_en":  "SHOFIRKON DISTRICT",
+        "name_uz_cyr":  "ШОФИРКОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2008,
+        "region_id":  20,
+        "name_uz":  "QOROVULBOZOR TUMANI",
+        "name_ru":  "КАРАУЛБАЗАРСКИЙ ТУМАН",
+        "name_en":  "KOROVULBOZOR DISTRICT",
+        "name_uz_cyr":  "ҚОРОВУЛБОЗОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2009,
+        "region_id":  20,
+        "name_uz":  "GAZLI SHAHRI",
+        "name_ru":  "ГАЗЛИ ГОРОД",
+        "name_en":  "GAZLI TOWN",
+        "name_uz_cyr":  "ГАЗЛИ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2010,
+        "region_id":  20,
+        "name_uz":  "BUXORO TUMANI",
+        "name_ru":  "БУХАРСКИЙ ТУМАН",
+        "name_en":  "BUKHARA DISTRICT",
+        "name_uz_cyr":  "БУХОРО ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2011,
+        "region_id":  20,
+        "name_uz":  "KOGON TUMANI",
+        "name_ru":  "КАГАНСКИЙ ТУМАН",
+        "name_en":  "KOGON DISTRICT",
+        "name_uz_cyr":  "КОГОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2012,
+        "region_id":  20,
+        "name_uz":  "G‘IJDUVON TUMANI",
+        "name_ru":  "ГИЖДУВАНСКИЙ ТУМАН",
+        "name_en":  "GIJDUVON DISTRICT",
+        "name_uz_cyr":  "ҒИЖДУВОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2013,
+        "region_id":  20,
+        "name_uz":  "BUXORO SHAHRI",
+        "name_ru":  "БУХОРО ГОРОД",
+        "name_en":  "BUXARA CITY",
+        "name_uz_cyr":  "БУХОРО ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2014,
+        "region_id":  20,
+        "name_uz":  "G‘IJDUVON SHAHRI",
+        "name_ru":  "ГИЖДУВАН ГОРОД",
+        "name_en":  "GIJDUVON TOWN",
+        "name_uz_cyr":  "ҒИЖДУВОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2015,
+        "region_id":  20,
+        "name_uz":  "KOGON SHAHRI",
+        "name_ru":  "КОГОН ГОРОД",
+        "name_en":  "KOGON TOWN",
+        "name_uz_cyr":  "КОГОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2016,
+        "region_id":  20,
+        "name_uz":  "F.XO‘JAYEV TUMANI",
+        "name_ru":  "Ф.ХУЖАЕВСКИЙ ТУМАН",
+        "name_en":  "F.XODJAEV DISTRICT",
+        "name_uz_cyr":  "Ф.ХЎЖАЕВ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2017,
+        "region_id":  20,
+        "name_uz":  "TO‘QIMACHI TUMANI",
+        "name_ru":  "ТУКИМАЧИСКИЙ ТУМАН",
+        "name_en":  "TUKIMACHI DISTRICT",
+        "name_uz_cyr":  "ТЎҚИМАЧИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2101,
+        "region_id":  21,
+        "name_uz":  "UCHQUDUQ TUMANI",
+        "name_ru":  "УЧКУДУКСКИЙ ТУМАН",
+        "name_en":  "UCHKUDUK DISTRICT",
+        "name_uz_cyr":  "УЧҚУДУҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2102,
+        "region_id":  21,
+        "name_uz":  "KONIMEX TUMANI",
+        "name_ru":  "КОНИМЕХСКИЙ ТУМАН",
+        "name_en":  "KONIMEKH DISTRICT",
+        "name_uz_cyr":  "КОНИМЕХ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2104,
+        "region_id":  21,
+        "name_uz":  "TOMDI TUMANI",
+        "name_ru":  "ТОМДИНСКИЙ ТУМАН",
+        "name_en":  "TOMDI DISTRICT",
+        "name_uz_cyr":  "ТОМДИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2105,
+        "region_id":  21,
+        "name_uz":  "NAVBAHOR TUMANI",
+        "name_ru":  "НАВБАХОРСКИЙ ТУМАН",
+        "name_en":  "NAVBAKHOR DISTRICT",
+        "name_uz_cyr":  "НАВБАҲОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2106,
+        "region_id":  21,
+        "name_uz":  "NAVOIY TUMANI",
+        "name_ru":  "НАВОИЙСКИЙ ТУМАН",
+        "name_en":  "NAVOIY DISTRICT",
+        "name_uz_cyr":  "НАВОИЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2107,
+        "region_id":  21,
+        "name_uz":  "NUROTA TUMANI",
+        "name_ru":  "НУРАТИНСКИЙ ТУМАН",
+        "name_en":  "NUROTA DISTRICT",
+        "name_uz_cyr":  "НУРОТА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2108,
+        "region_id":  21,
+        "name_uz":  "XATIRCHI TUMANI",
+        "name_ru":  "ХАТИРЧИНСКИЙ ТУМАН",
+        "name_en":  "KHATIRCHI DISTRICT",
+        "name_uz_cyr":  "ХАТИРЧИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2109,
+        "region_id":  21,
+        "name_uz":  "QIZILTEPA TUMANI",
+        "name_ru":  "КИЗИЛТЕПИНСКИЙ ТУМАН",
+        "name_en":  "KIZILTEPA DISTRICT",
+        "name_uz_cyr":  "ҚИЗИЛТЕПА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2110,
+        "region_id":  21,
+        "name_uz":  "KARMANA TUMANI",
+        "name_ru":  "КАРМАНИНСКИЙ ТУМАН",
+        "name_en":  "KARMANA DISTRICT",
+        "name_uz_cyr":  "КАРМАНА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2111,
+        "region_id":  21,
+        "name_uz":  "NAVOIY SHAHRI",
+        "name_ru":  "НАВОИЙ ГОРОД",
+        "name_en":  "NAVOI TOWN",
+        "name_uz_cyr":  "НАВОИЙ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2112,
+        "region_id":  21,
+        "name_uz":  "ZARAFSHON SHAHRI",
+        "name_ru":  "ЗАРАФШОН ГОРОД",
+        "name_en":  "ZARAFSHON TOWN",
+        "name_uz_cyr":  "ЗАРАФШОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1215,
+        "region_id":  12,
+        "name_uz":  "SARDOBA TUMANI",
+        "name_ru":  "САРДОБИНСКИЙ ТУМАН",
+        "name_en":  "SARDOBA DISTRICT",
+        "name_uz_cyr":  "САРДОБА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2113,
+        "region_id":  21,
+        "name_uz":  "UCHQUDUQ SHAHRI",
+        "name_ru":  "УЧКУДУК ГОРОД",
+        "name_en":  "UCHKUDUK TOWN",
+        "name_uz_cyr":  "УЧҚУДУҚ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2201,
+        "region_id":  22,
+        "name_uz":  "XAZORASP TUMANI",
+        "name_ru":  "ХАЗАРАСПСКИЙ ТУМАН",
+        "name_en":  "KHOZARASP DISTRICT",
+        "name_uz_cyr":  "ХАЗОРАСП ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2202,
+        "region_id":  22,
+        "name_uz":  "YANGIARIQ TUMANI",
+        "name_ru":  "ЯНГИАРИКСКИЙ ТУМАН",
+        "name_en":  "YANGIARIK DISTRICT",
+        "name_uz_cyr":  "ЯНГИАРИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1514,
+        "region_id":  15,
+        "name_uz":  "O‘ZBEKISTON TUMANI",
+        "name_ru":  "УЗБЕКИСТАНСКИЙ ТУМАН",
+        "name_en":  "UZBEKISTON DISTRICT",
+        "name_uz_cyr":  "ЎЗБЕКИСТОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1515,
+        "region_id":  15,
+        "name_uz":  "BESHARIQ TUMANI",
+        "name_ru":  "БЕШАРИКСКИЙ ТУМАН",
+        "name_en":  "BESHARIK DISTRICT",
+        "name_uz_cyr":  "БЕШАРИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1516,
+        "region_id":  15,
+        "name_uz":  "SO‘X TUMANI",
+        "name_ru":  "СОХСКИЙ ТУМАН",
+        "name_en":  "SOKH DISTRICT",
+        "name_uz_cyr":  "СЎХ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1517,
+        "region_id":  15,
+        "name_uz":  "QUVASOY SHAHRI",
+        "name_ru":  "КУВАСОЙ ГОРОД",
+        "name_en":  "KUVASOY TOWN",
+        "name_uz_cyr":  "ҚУВАСОЙ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1518,
+        "region_id":  15,
+        "name_uz":  "QUVA SHAHRI",
+        "name_ru":  "КУВА ГОРОД",
+        "name_en":  "KUVA TOWN",
+        "name_uz_cyr":  "ҚУВА ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1519,
+        "region_id":  15,
+        "name_uz":  "QO‘QON SHAHRI",
+        "name_ru":  "КОКАНД ГОРОД",
+        "name_en":  "KOKAND TOWN",
+        "name_uz_cyr":  "ҚЎҚОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1520,
+        "region_id":  15,
+        "name_uz":  "MARG‘ILON SHAHRI",
+        "name_ru":  "МАРГИЛОН ГОРОД",
+        "name_en":  "MARGILAN TOWN",
+        "name_uz_cyr":  "МАРҒИЛОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1521,
+        "region_id":  15,
+        "name_uz":  "FARG‘ONA SHAHRI",
+        "name_ru":  "ФАРГОНА ГОРОД",
+        "name_en":  "FERGANA TOWN",
+        "name_uz_cyr":  "ФАРҒОНА ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1522,
+        "region_id":  15,
+        "name_uz":  "KIRGULI SHAHRI",
+        "name_ru":  "КИРГУЛИ ГОРОД",
+        "name_en":  "KIRGULI TOWN",
+        "name_uz_cyr":  "КИРГУЛИ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1601,
+        "region_id":  16,
+        "name_uz":  "DAVLATOBOD TUMANI",
+        "name_ru":  "ДАВЛАТАБАДСКИЙ ТУМАН",
+        "name_en":  "DAVLATOBOD DISTRICT",
+        "name_uz_cyr":  "ДАВЛАТОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1602,
+        "region_id":  16,
+        "name_uz":  "MINGBULOQ TUMANI",
+        "name_ru":  "МИНГБУЛАКСКИЙ ТУМАН",
+        "name_en":  "MINGBULOK DISTRICT",
+        "name_uz_cyr":  "МИНГБУЛОҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1603,
+        "region_id":  16,
+        "name_uz":  "NAMANGAN TUMANI",
+        "name_ru":  "НАМАНГАНСКИЙ ТУМАН",
+        "name_en":  "NAMANGAN DISTRICT",
+        "name_uz_cyr":  "НАМАНГАН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1604,
+        "region_id":  16,
+        "name_uz":  "NORIN TUMANI",
+        "name_ru":  "НАРИНСКИЙ ТУМАН",
+        "name_en":  "NORIN DISTRICT",
+        "name_uz_cyr":  "НОРИН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1605,
+        "region_id":  16,
+        "name_uz":  "UYCHI TUMANI",
+        "name_ru":  "УЙЧИНСКИЙ ТУМАН",
+        "name_en":  "UYCHI DISTRICT",
+        "name_uz_cyr":  "УЙЧИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1606,
+        "region_id":  16,
+        "name_uz":  "UCHQO‘RG‘ON TUMANI",
+        "name_ru":  "УЧКУРГАНСКИЙ ТУМАН",
+        "name_en":  "UCHKURGON DISTRICT",
+        "name_uz_cyr":  "УЧҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1607,
+        "region_id":  16,
+        "name_uz":  "CHORTOQ TUMANI",
+        "name_ru":  "ЧАРТАКСКИЙ ТУМАН",
+        "name_en":  "CHORTOK DISTRICT",
+        "name_uz_cyr":  "ЧОРТОҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1608,
+        "region_id":  16,
+        "name_uz":  "YANGIQO‘RG‘ON TUMANI",
+        "name_ru":  "ЯНГИКУРГАНСКИЙ ТУМАН",
+        "name_en":  "YANGIKURGON DISTRICT",
+        "name_uz_cyr":  "ЯНГИҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1609,
+        "region_id":  16,
+        "name_uz":  "KOSONSOY TUMANI",
+        "name_ru":  "КАСАНСАЙСКИЙ ТУМАН",
+        "name_en":  "KOSONSOY DISTRICT",
+        "name_uz_cyr":  "КОСОНСОЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001080,
+        "region_id":  10,
+        "name_uz":  "YASHNOBOD TUMANI",
+        "name_ru":  "ЯШНОБОД РАЙОН",
+        "name_en":  "YASHNOBOD DISTRICT",
+        "name_uz_cyr":  "ЯШНОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1610,
+        "region_id":  16,
+        "name_uz":  "CHUST TUMANI",
+        "name_ru":  "ЧУСТСКИЙ ТУМАН",
+        "name_en":  "CHUST DISTRICT",
+        "name_uz_cyr":  "ЧУСТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1611,
+        "region_id":  16,
+        "name_uz":  "POP TUMANI",
+        "name_ru":  "ПАПСКИЙ ТУМАН",
+        "name_en":  "POP DISTRICT",
+        "name_uz_cyr":  "ПОП ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1612,
+        "region_id":  16,
+        "name_uz":  "TO‘RAQO‘RG‘ON TUMANI",
+        "name_ru":  "ТУРАКУРГАНСКИЙ ТУМАН",
+        "name_en":  "TURAKURGON DISTRICT",
+        "name_uz_cyr":  "ТЎРАҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1613,
+        "region_id":  16,
+        "name_uz":  "NAMANGAN SHAHRI",
+        "name_ru":  "НАМАНГАН ГОРОД",
+        "name_en":  "NAMANGAN TOWN",
+        "name_uz_cyr":  "НАМАНГАН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1614,
+        "region_id":  16,
+        "name_uz":  "KOSONSOY SHAHRI",
+        "name_ru":  "КОСОНСОЙ ГОРОД",
+        "name_en":  "KOSONSOY TOWN",
+        "name_uz_cyr":  "КОСОНСОЙ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1615,
+        "region_id":  16,
+        "name_uz":  "UCHQO‘RG‘ON SHAHRI",
+        "name_ru":  "УЧКУРГОН ГОРОД",
+        "name_en":  "UCHKURGAN TOWN",
+        "name_uz_cyr":  "УЧҚЎРҒОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1616,
+        "region_id":  16,
+        "name_uz":  "CHORTOQ SHAHRI",
+        "name_ru":  "ЧОРТОК ГОРОД",
+        "name_en":  "CHORTOK TOWN",
+        "name_uz_cyr":  "ЧОРТОҚ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1617,
+        "region_id":  16,
+        "name_uz":  "CHUST SHAHRI",
+        "name_ru":  "ЧУСТ ГОРОД",
+        "name_en":  "CHUST TOWN",
+        "name_uz_cyr":  "ЧУСТ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1618,
+        "region_id":  16,
+        "name_uz":  "XAQQULOBOD SHAHRI",
+        "name_ru":  "ХАККУЛОБОД ГОРОД",
+        "name_en":  "KHAKKULABAD TOWN",
+        "name_uz_cyr":  "ХАҚҚУЛОБОД ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1701,
+        "region_id":  17,
+        "name_uz":  "ANDIJON TUMANI",
+        "name_ru":  "АНДИЖАНСКИЙ ТУМАН",
+        "name_en":  "ANDIJON DISTRICT",
+        "name_uz_cyr":  "АНДИЖОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1702,
+        "region_id":  17,
+        "name_uz":  "OLTINKO‘L TUMAN",
+        "name_ru":  "ОЛТИНКУЛЬСКИЙ ТУМАН",
+        "name_en":  "OLTINKUL DISTRICT",
+        "name_uz_cyr":  "ОЛТИНКЎЛ ТУМАН",
+        "active":  1
+    },
+    {
+        "id":  1703,
+        "region_id":  17,
+        "name_uz":  "ASAKA TUMAN",
+        "name_ru":  "АСАКИНСКИЙ ТУМАН",
+        "name_en":  "ASAKA DISTRICT",
+        "name_uz_cyr":  "АСАКА ТУМАН",
+        "active":  1
+    },
+    {
+        "id":  1704,
+        "region_id":  17,
+        "name_uz":  "BALIQCHI TUMAN",
+        "name_ru":  "БАЛИКЧИНСКИЙ ТУМАН",
+        "name_en":  "BALIKCHI DISTRICT",
+        "name_uz_cyr":  "БАЛИҚЧИ ТУМАН",
+        "active":  1
+    },
+    {
+        "id":  1705,
+        "region_id":  17,
+        "name_uz":  "BO‘Z TUMANI",
+        "name_ru":  "БУЗСКИЙ ТУМАН",
+        "name_en":  "BOOZ DISTRICT",
+        "name_uz_cyr":  "БЎЗ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1706,
+        "region_id":  17,
+        "name_uz":  "ULUG‘NOR TUMANI",
+        "name_ru":  "УЛУГНОРСКИЙ ТУМАН",
+        "name_en":  "ULUGNOR DISTRICT",
+        "name_uz_cyr":  "УЛУҒНОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1707,
+        "region_id":  17,
+        "name_uz":  "SHAXRIXON TUMANI",
+        "name_ru":  "ШАХРИХАНСКИЙ ТУМАН",
+        "name_en":  "SHAKHRIKHON DISTRICT",
+        "name_uz_cyr":  "ШАХРИХОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1708,
+        "region_id":  17,
+        "name_uz":  "QO‘RG‘ONTEPA TUMANI",
+        "name_ru":  "КУРГАНТЕПИНСКИЙ ТУМАН",
+        "name_en":  "KURGONTEPA DISTRICT",
+        "name_uz_cyr":  "ҚЎРҒОНТЕПА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1410,
+        "region_id":  14,
+        "name_uz":  "TAYLOQ TUMANI",
+        "name_ru":  "ТАЙЛАКСКИЙ ТУМАН",
+        "name_en":  "TAYLOK DISTRICT",
+        "name_uz_cyr":  "ТАЙЛОҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1411,
+        "region_id":  14,
+        "name_uz":  "BULUNG‘UR TUMANI",
+        "name_ru":  "БУЛУНГУРСКИЙ ТУМАН",
+        "name_en":  "BUBLUNGUR DISTRICT",
+        "name_uz_cyr":  "БУЛУНҒУР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1412,
+        "region_id":  14,
+        "name_uz":  "GO‘ZALKENT TUMANI",
+        "name_ru":  "ГУЗАЛКЕНТСКИЙ ТУМАН",
+        "name_en":  "GAZALKENT DISTRICT",
+        "name_uz_cyr":  "ГЎЗАЛКЕНТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1718,
+        "region_id":  17,
+        "name_uz":  "SHAHRIXON SHAHRI",
+        "name_ru":  "ШАХРИХОН ГОРОД",
+        "name_en":  "SHAHRIXON TOWN",
+        "name_uz_cyr":  "ШАҲРИХОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1719,
+        "region_id":  17,
+        "name_uz":  "QORASUV SHAHRI",
+        "name_ru":  "КОРАСУВ ГОРОД",
+        "name_en":  "KARASU TOWN",
+        "name_uz_cyr":  "ҚОРАСУВ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1801,
+        "region_id":  18,
+        "name_uz":  "CHIROQCHI TUMANI",
+        "name_ru":  "ЧИРАКЧИНСКИЙ ТУМАН",
+        "name_en":  "CHIROKCHI DISTRICT",
+        "name_uz_cyr":  "ЧИРОҚЧИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1802,
+        "region_id":  18,
+        "name_uz":  "KOSON TUMANI",
+        "name_ru":  "КАСАНСКИЙ ТУМАН",
+        "name_en":  "KOSON DISTRICT",
+        "name_uz_cyr":  "КОСОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1803,
+        "region_id":  18,
+        "name_uz":  "SHAXRISABZ TUMANI",
+        "name_ru":  "ШАХРИСАБЗСКИЙ ТУМАН",
+        "name_en":  "SHAZRISABZ DISTRICT",
+        "name_uz_cyr":  "ШАХРИСАБЗ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1804,
+        "region_id":  18,
+        "name_uz":  "DEHQONOBOD TUMANI",
+        "name_ru":  "ДЕХКАНАБАДСКИЙ ТУМАН",
+        "name_en":  "DEKHKONOBOD DISTRICT",
+        "name_uz_cyr":  "ДЕҲҚОНОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1413,
+        "region_id":  14,
+        "name_uz":  "SAMARQAND TUMANI",
+        "name_ru":  "САМАРКАНДСКИЙ ТУМАН",
+        "name_en":  "SAMARKAND DISTRICT",
+        "name_uz_cyr":  "САМАРҚАНД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1414,
+        "region_id":  14,
+        "name_uz":  "QO‘SHRABOD TUMANI",
+        "name_ru":  "КУШРАБАДСКИЙ ТУМАН",
+        "name_en":  "KUSHRABOT DISTRICT",
+        "name_uz_cyr":  "ҚЎШРАБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1415,
+        "region_id":  14,
+        "name_uz":  "PAYARIQ TUMANI",
+        "name_ru":  "ПАЙАРЫКСКИЙ ТУМАН",
+        "name_en":  "PAYARIK DISTRICT",
+        "name_uz_cyr":  "ПАЙАРИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1416,
+        "region_id":  14,
+        "name_uz":  "CHELAK TUMANI",
+        "name_ru":  "ЧЕЛАКСКИЙ ТУМАН",
+        "name_en":  "CHELAK DISTRICT",
+        "name_uz_cyr":  "ЧЕЛАК ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1417,
+        "region_id":  14,
+        "name_uz":  "SAMARQAND SHAHRI",
+        "name_ru":  "САМАРКАНД ГОРОД",
+        "name_en":  "SAMARKAND CITY",
+        "name_uz_cyr":  "САМАРҚАНД ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1418,
+        "region_id":  14,
+        "name_uz":  "BOG‘ISHAMOL TUMANI",
+        "name_ru":  "БОГИШАМОЛСКИЙ ТУМАН",
+        "name_en":  "BOGISHAMOL DISTRICT",
+        "name_uz_cyr":  "БОҒИШАМОЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1419,
+        "region_id":  14,
+        "name_uz":  "TEMIRYO‘L TUMANI",
+        "name_ru":  "ТЕМИРЙУЛСКИЙ ТУМАН",
+        "name_en":  "TEMIRYUL TOWN",
+        "name_uz_cyr":  "ТЕМИРЙЎЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1420,
+        "region_id":  14,
+        "name_uz":  "OQTOSH SHAHRI",
+        "name_ru":  "ОКТОШ ГОРОД",
+        "name_en":  "OKTOSH TOWN",
+        "name_uz_cyr":  "ОҚТОШ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1421,
+        "region_id":  14,
+        "name_uz":  "KATTAQO‘RG‘ON SHAHRI",
+        "name_ru":  "КАТТАКУРГОН ГОРОД",
+        "name_en":  "KATTAKURGAN TOWN",
+        "name_uz_cyr":  "КАТТАҚЎРҒОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1422,
+        "region_id":  14,
+        "name_uz":  "URGUT SHAHRI",
+        "name_ru":  "УРГУТ ГОРОД",
+        "name_en":  "URGUT TOWN",
+        "name_uz_cyr":  "УРГУТ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1423,
+        "region_id":  14,
+        "name_uz":  "SIYOB TUMANI",
+        "name_ru":  "СИЁБ ТУМАН",
+        "name_en":  "SIYOB DISTRICT",
+        "name_uz_cyr":  "СИЁБ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1501,
+        "region_id":  15,
+        "name_uz":  "KIRGULI TUMANI",
+        "name_ru":  "КИРГУЛИЙСКИЙ ТУМАН",
+        "name_en":  "KIRGULI DISTRICT",
+        "name_uz_cyr":  "КИРГУЛИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1502,
+        "region_id":  15,
+        "name_uz":  "FARG‘ONA TUMANI",
+        "name_ru":  "ФЕРГАНСКИЙ ТУМАН",
+        "name_en":  "FARGONA DISTRICT",
+        "name_uz_cyr":  "ФАРҒОНА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1503,
+        "region_id":  15,
+        "name_uz":  "QUVA TUMANI",
+        "name_ru":  "КУВИНСКИЙ ТУМАН",
+        "name_en":  "KUVA DISTRICT",
+        "name_uz_cyr":  "ҚУВА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1504,
+        "region_id":  15,
+        "name_uz":  "TOSHLOQ TUMANI",
+        "name_ru":  "ТАШЛАКСКИЙ ТУМАН",
+        "name_en":  "TOSHLOK DISTRICT",
+        "name_uz_cyr":  "ТОШЛОҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1505,
+        "region_id":  15,
+        "name_uz":  "OXUNBOBOYEV TUMANI",
+        "name_ru":  "АХУНБАБАЕВСКИЙ ТУМАН",
+        "name_en":  "OKHUNBOBOEV DISTRICT",
+        "name_uz_cyr":  "ОХУНБОБОЕВ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1506,
+        "region_id":  15,
+        "name_uz":  "YOZYOVON TUMANI",
+        "name_ru":  "ЯЗЯВАНСКИЙ ТУМАН",
+        "name_en":  "YOZYAVON DISTRICT",
+        "name_uz_cyr":  "ЁЗЁВОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1507,
+        "region_id":  15,
+        "name_uz":  "OLTIARIQ TUMANI",
+        "name_ru":  "ОЛТИАРИКСКИЙ ТУМАН",
+        "name_en":  "OLTIARIK DISTRICT",
+        "name_uz_cyr":  "ОЛТИАРИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1508,
+        "region_id":  15,
+        "name_uz":  "BOG‘DOD TUMANI",
+        "name_ru":  "БАГДАДСКИЙ ТУМАН",
+        "name_en":  "BOGDOD DISTRICT",
+        "name_uz_cyr":  "БОҒДОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1509,
+        "region_id":  15,
+        "name_uz":  "BUVAYDA TUMANI",
+        "name_ru":  "БУВАЙДИНСКИЙ ТУМАН",
+        "name_en":  "BUVAYDA DISTRICT",
+        "name_uz_cyr":  "БУВАЙДА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1510,
+        "region_id":  15,
+        "name_uz":  "UCHKO‘PRIK TUMANI",
+        "name_ru":  "УЧКУПРИКСКИЙ ТУМАН",
+        "name_en":  "UCHKOOPRIK DISTRICT",
+        "name_uz_cyr":  "УЧКЎПРИК ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1511,
+        "region_id":  15,
+        "name_uz":  "RISHTON TUMANI",
+        "name_ru":  "РИШТАНСКИЙ ТУМАН",
+        "name_en":  "RISHTON DISTRICT",
+        "name_uz_cyr":  "РИШТОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1512,
+        "region_id":  15,
+        "name_uz":  "DANGARA TUMANI",
+        "name_ru":  "ДАНГАРИНСКИЙ ТУМАН",
+        "name_en":  "DANGARA DISTRICT",
+        "name_uz_cyr":  "ДАНГАРА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1513,
+        "region_id":  15,
+        "name_uz":  "FURQAT TUMANI",
+        "name_ru":  "ФУРКАТСКИЙ ТУМАН",
+        "name_en":  "FURKAT DISTRICT",
+        "name_uz_cyr":  "ФУРҚАТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1002,
+        "region_id":  10,
+        "name_uz":  "S.RAXIMWOV TUMANI",
+        "name_ru":  "С.РАХИМОВСКИЙ ТУМАН",
+        "name_en":  "SOBIR RAKHIMOV DISTRICT",
+        "name_uz_cyr":  "СОБИР РАХИМОВ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1003,
+        "region_id":  10,
+        "name_uz":  "MIRZO ULUG‘BEK TUMANI",
+        "name_ru":  "М.УЛУГБЕКСКИЙ ТУМАН",
+        "name_en":  "MIRZO ULUGBEK DISTRICT",
+        "name_uz_cyr":  "МИРЗО УЛУҒБЕК ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1004,
+        "region_id":  10,
+        "name_uz":  "XAMZA TUMANI",
+        "name_ru":  "ХАМЗИНСКИЙ ТУМАН",
+        "name_en":  "KHAMZA DISTRICT",
+        "name_uz_cyr":  "ХАМЗА ТУМАНИ",
+        "active":  0
+    },
+    {
+        "id":  1005,
+        "region_id":  10,
+        "name_uz":  "YAKKASAROY TUMANI",
+        "name_ru":  "ЯККАСАРАЙСКИЙ ТУМАН",
+        "name_en":  "YAKKASAROY DISTRICT",
+        "name_uz_cyr":  "ЯККАСАРОЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1006,
+        "region_id":  10,
+        "name_uz":  "SHAYXONTOXUR TUMANI",
+        "name_ru":  "ШАЙХОНТОХУРСКИЙ ТУМАН",
+        "name_en":  "SHAYKHONTOKHUR DISTRICT",
+        "name_uz_cyr":  "ШАЙХОНТОХУР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1007,
+        "region_id":  10,
+        "name_uz":  "CHILONZOR TUMANI",
+        "name_ru":  "ЧИЛАНЗАРСКИЙ ТУМАН",
+        "name_en":  "CHILONZOR DISTRICT",
+        "name_uz_cyr":  "ЧИЛОНЗОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1008,
+        "region_id":  10,
+        "name_uz":  "SIRG‘ALI TUMANI",
+        "name_ru":  "СЕРГЕЛИЙСКИЙ ТУМАН",
+        "name_en":  "SIRGALI DISTRICT",
+        "name_uz_cyr":  "СИРҒАЛИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1009,
+        "region_id":  10,
+        "name_uz":  "MIROBOD TUMANI",
+        "name_ru":  "МИРАБАДСКИЙ ТУМАН",
+        "name_en":  "MIROBOD DISTRICT",
+        "name_uz_cyr":  "МИРОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1010,
+        "region_id":  10,
+        "name_uz":  "YUNUSOBOD TUMANI",
+        "name_ru":  "ЮНУСАБАДСКИЙ ТУМАН",
+        "name_en":  "YUNUSOBOD DISTRICT",
+        "name_uz_cyr":  "ЮНУСОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1011,
+        "region_id":  10,
+        "name_uz":  "BEKTEMIR TUMANI",
+        "name_ru":  "БЕКТЕМИРСКИЙ ТУМАН",
+        "name_en":  "BEKTEMIR DISTRICT",
+        "name_uz_cyr":  "БЕКТЕМИР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1101,
+        "region_id":  11,
+        "name_uz":  "YANGIYO‘L TUMANI",
+        "name_ru":  "ЯНГИЮЛЬСКИЙ ТУМАН",
+        "name_en":  "YANGIYUL DISTRICT",
+        "name_uz_cyr":  "ЯНГИЙЎЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1102,
+        "region_id":  11,
+        "name_uz":  "ZANGI-OTA TUMANI",
+        "name_ru":  "ЗАНГИ-АТИНСКИЙ ТУМАН",
+        "name_en":  "ZANGI-OTA DISTRICT",
+        "name_uz_cyr":  "ЗАНГИ-ОТА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1103,
+        "region_id":  11,
+        "name_uz":  "PISKENT TUMANI",
+        "name_ru":  "ПСКЕНТСКИЙ ТУМАН",
+        "name_en":  "PISKENT DISTRICT",
+        "name_uz_cyr":  "ПИСКЕНТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1104,
+        "region_id":  11,
+        "name_uz":  "PARKENT TUMANI",
+        "name_ru":  "ПАРКЕНТСКИЙ ТУМАН",
+        "name_en":  "PARKENT DISTRICT",
+        "name_uz_cyr":  "ПАРКЕНТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1105,
+        "region_id":  11,
+        "name_uz":  "O‘RTACHIRCHIQ TUMANI",
+        "name_ru":  "УРТАЧИРЧИКСКИЙ ТУМАН",
+        "name_en":  "URTACHIRCHIK DISTRICT",
+        "name_uz_cyr":  "ЎРТАЧИРЧИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1106,
+        "region_id":  11,
+        "name_uz":  "OQQO‘RG‘ON TUMANI",
+        "name_ru":  "АККУРГАНСКИЙ ТУМАН",
+        "name_en":  "OKKURGON DISTRICT",
+        "name_uz_cyr":  "ОҚҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1107,
+        "region_id":  11,
+        "name_uz":  "QUYICHIRCHIQ TUMANI",
+        "name_ru":  "КУЙИЧИРЧИКСКИЙ ТУМАН",
+        "name_en":  "KUYICHIRCHIK DISTRICT",
+        "name_uz_cyr":  "ҚУЙИЧИРЧИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1108,
+        "region_id":  11,
+        "name_uz":  "QIBRAY TUMANI",
+        "name_ru":  "КИБРАЙСКИЙ ТУМАН",
+        "name_en":  "KIBRAY DISTRICT",
+        "name_uz_cyr":  "ҚИБРАЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1109,
+        "region_id":  11,
+        "name_uz":  "TOSHKENT TUMANI",
+        "name_ru":  "ТАШКЕНТСКИЙ ТУМАН",
+        "name_en":  "TOSHKENT DISTRICT",
+        "name_uz_cyr":  "ТОШКЕНТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1110,
+        "region_id":  11,
+        "name_uz":  "OXANGORON TUMANI",
+        "name_ru":  "АХАНГАРАНСКИЙ ТУМАН",
+        "name_en":  "OKHAGORON DISTRICT",
+        "name_uz_cyr":  "ОХАНГОРОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1111,
+        "region_id":  11,
+        "name_uz":  "BEKOBOD TUMANI",
+        "name_ru":  "БЕКАБАДСКИЙ ТУМАН",
+        "name_en":  "BEKOBOD DISTRICT",
+        "name_uz_cyr":  "БЕКОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1112,
+        "region_id":  11,
+        "name_uz":  "BO‘STONLIQ TUMANI",
+        "name_ru":  "БОСТАНЛЫКСКИЙ ТУМАН",
+        "name_en":  "BUSTONLIK DISTRICT",
+        "name_uz_cyr":  "БЎСТОНЛИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1113,
+        "region_id":  11,
+        "name_uz":  "BO‘KA TUMANI",
+        "name_ru":  "БУКИНСКИЙ ТУМАН",
+        "name_en":  "BUKA DISTRICT",
+        "name_uz_cyr":  "БЎКА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1114,
+        "region_id":  11,
+        "name_uz":  "YUQORICHIRCHIQ TUMANI",
+        "name_ru":  "ЮКОРИЧИРЧИКСКИЙ ТУМАН",
+        "name_en":  "YUKORICHIRCHIK DISTRICT",
+        "name_uz_cyr":  "ЮҚОРИЧИРЧИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1115,
+        "region_id":  11,
+        "name_uz":  "CHINOZ TUMANI",
+        "name_ru":  "ЧИНАЗСКИЙ ТУМАН",
+        "name_en":  "CHINOZ DISTRICT",
+        "name_uz_cyr":  "ЧИНОЗ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1116,
+        "region_id":  11,
+        "name_uz":  "ANGREN SHAHRI",
+        "name_ru":  "АНГРЕН ГОРОД",
+        "name_en":  "ANGREN TOWN",
+        "name_uz_cyr":  "АНГРЕН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1117,
+        "region_id":  11,
+        "name_uz":  "BEKOBOD SHAHRI",
+        "name_ru":  "БЕКОБОД ГОРОД",
+        "name_en":  "BEKABAD TOWN",
+        "name_uz_cyr":  "БЕКОБОД ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1118,
+        "region_id":  11,
+        "name_uz":  "OLMALIK SHAHRI",
+        "name_ru":  "ОЛМАЛИК ГОРОД",
+        "name_en":  "OLMALIK TOWN",
+        "name_uz_cyr":  "ОЛМАЛИК ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1119,
+        "region_id":  11,
+        "name_uz":  "OXANGORON SHAHRI",
+        "name_ru":  "АХАНГАРАН ГОРОД",
+        "name_en":  "OKHANGORON TOWN",
+        "name_uz_cyr":  "ОХАНГОРОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1120,
+        "region_id":  11,
+        "name_uz":  "CHIRCHIQ SHAHRI",
+        "name_ru":  "ЧИРЧИК ГОРОД",
+        "name_en":  "CHIRCHIK TOWN",
+        "name_uz_cyr":  "ЧИРЧИҚ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1121,
+        "region_id":  11,
+        "name_uz":  "YANGIOBOD SHAHRI",
+        "name_ru":  "ЯНГИОБОД ГОРОД",
+        "name_en":  "YANGIOBOD TOWN",
+        "name_uz_cyr":  "ЯНГИОБОД ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1814,
+        "region_id":  18,
+        "name_uz":  "MIRISHKOR TUMANI",
+        "name_ru":  "МИРИШКОРСКИЙ ТУМАН",
+        "name_en":  "MIRISHKOR DISTRICT",
+        "name_uz_cyr":  "МИРИШКОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1012,
+        "region_id":  10,
+        "name_uz":  "OLMAZOR TUMANI",
+        "name_ru":  "АЛМАЗАРСКИЙ ТУМАН",
+        "name_en":  "OLMAZOR REGION",
+        "name_uz_cyr":  "ОЛМАЗОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2434,
+        "region_id":  15,
+        "name_uz":  "QO‘SHTEPA TUMANI",
+        "name_ru":  "КУШТЕПИНСКИЙ РАЙОН",
+        "name_en":  "QOSHTEPA TUMANI",
+        "name_uz_cyr":  "ҚЎШТЕПА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1122,
+        "region_id":  11,
+        "name_uz":  "YANGIYO‘L SHAHRI",
+        "name_ru":  "ЯНГИЙУЛ ГОРОД",
+        "name_en":  "YANGIYUL TOWN",
+        "name_uz_cyr":  "ЯНГИЙЎЛ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  739001220,
+        "region_id":  18,
+        "name_uz":  "KO‘KDALA TUMANI",
+        "name_ru":  "КУКДАЛИНСКИЙ РАЙОН",
+        "name_en":  "KUKDALA DISTRICT",
+        "name_uz_cyr":  "КЎКДАЛА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1201,
+        "region_id":  12,
+        "name_uz":  "SAYXUNOBOD TUMANI",
+        "name_ru":  "САЙХУНАБАДСКИЙ ТУМАН",
+        "name_en":  "SYXUNOBOD DISTRICT",
+        "name_uz_cyr":  "САЙХУНОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2203,
+        "region_id":  22,
+        "name_uz":  "GURLAN TUMANI",
+        "name_ru":  "ГУРЛАНСКИЙ ТУМАН",
+        "name_en":  "GURLAN DISTRICT",
+        "name_uz_cyr":  "ГУРЛАН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1709,
+        "region_id":  17,
+        "name_uz":  "JALOLQUDUQ TUMANI",
+        "name_ru":  "ЖАЛОЛКУДУКСКИЙ ТУМАН",
+        "name_en":  "JALOLKUDUK DISTRICT",
+        "name_uz_cyr":  "ЖАЛОЛҚУДУҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1710,
+        "region_id":  17,
+        "name_uz":  "XO‘JAOBOD TUMANI",
+        "name_ru":  "ХУЖААБАДСКИЙ ТУМАН",
+        "name_en":  "XUJAOBOD DISTRICT",
+        "name_uz_cyr":  "ХЎЖАОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1711,
+        "region_id":  17,
+        "name_uz":  "MARXAMAT TUMANI",
+        "name_ru":  "МАРХАМАТСКИЙ ТУМАН",
+        "name_en":  "MARKHAMAT DISTRICT",
+        "name_uz_cyr":  "МАРХАМАТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1712,
+        "region_id":  17,
+        "name_uz":  "IZBOSKAN TUMANI",
+        "name_ru":  "ИЗБОСКАНСКИЙ ТУМАН",
+        "name_en":  "IZBOSKAN DISTRICT",
+        "name_uz_cyr":  "ИЗБОСКАН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1713,
+        "region_id":  17,
+        "name_uz":  "BULOQBOSHI TUMANI",
+        "name_ru":  "БУЛОКБОШИНСКИЙ ТУМАН",
+        "name_en":  "BULOKBOSHI DISTRICT",
+        "name_uz_cyr":  "БУЛОҚБОШИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1714,
+        "region_id":  17,
+        "name_uz":  "PAXTAOBOD TUMANI",
+        "name_ru":  "ПАХТААБАДСКИЙ ТУМАН",
+        "name_en":  "PAKHTAOBOD DISTRICT",
+        "name_uz_cyr":  "ПАХТАОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1715,
+        "region_id":  17,
+        "name_uz":  "ANDIJON SHAHRI",
+        "name_ru":  "АНДИЖОН ГОРОД",
+        "name_en":  "ANDIJAN TOWN",
+        "name_uz_cyr":  "АНДИЖОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1716,
+        "region_id":  17,
+        "name_uz":  "ASAKA SHAHRI",
+        "name_ru":  "АСАКА ГОРОД",
+        "name_en":  "ASAKA TOWN",
+        "name_uz_cyr":  "АСАКА ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1717,
+        "region_id":  17,
+        "name_uz":  "XONOBOD SHAHRI",
+        "name_ru":  "ХОНОБОД ГОРОД",
+        "name_en":  "KHONIBOD TOWN",
+        "name_uz_cyr":  "ХОНОБОД ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1806,
+        "region_id":  18,
+        "name_uz":  "YAKKABOG‘ TUMANI",
+        "name_ru":  "ЯККАБАГСКИЙ ТУМАН",
+        "name_en":  "YAKKABOG DISTRICT",
+        "name_uz_cyr":  "ЯККАБОҒ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1807,
+        "region_id":  18,
+        "name_uz":  "BAXORISTON TUMANI",
+        "name_ru":  "БАХОРИСТАНСКИЙ ТУМАН",
+        "name_en":  "BAKHORISTON DISTRICT",
+        "name_uz_cyr":  "БАХОРИСТОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1808,
+        "region_id":  18,
+        "name_uz":  "G‘UZOR TUMANI",
+        "name_ru":  "ГУЗАРСКИЙ ТУМАН",
+        "name_en":  "GUZOR DISTRICT",
+        "name_uz_cyr":  "ҒУЗОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1809,
+        "region_id":  18,
+        "name_uz":  "QARSHI TUMANI",
+        "name_ru":  "КАРШИНСКИЙ ТУМАН",
+        "name_en":  "KARSHI DISTRICT",
+        "name_uz_cyr":  "ҚАРШИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1810,
+        "region_id":  18,
+        "name_uz":  "NISHON TUMANI",
+        "name_ru":  "НИШАНСКИЙ ТУМАН",
+        "name_en":  "NISHON DISTRICT",
+        "name_uz_cyr":  "НИШОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1811,
+        "region_id":  18,
+        "name_uz":  "KITOB TUMANI",
+        "name_ru":  "КИТАБСКИЙ ТУМАН",
+        "name_en":  "KITOB DISTRICT",
+        "name_uz_cyr":  "КИТОБ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1812,
+        "region_id":  18,
+        "name_uz":  "KASBI TUMANI",
+        "name_ru":  "КАСБИЙСКИЙ ТУМАН",
+        "name_en":  "KASBI DISTRICT",
+        "name_uz_cyr":  "КАСБИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1813,
+        "region_id":  18,
+        "name_uz":  "MUBORAK TUMANI",
+        "name_ru":  "МУБОРАКСКИЙ ТУМАН",
+        "name_en":  "MUBORAK DISTRICT",
+        "name_uz_cyr":  "МУБОРАК ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1815,
+        "region_id":  18,
+        "name_uz":  "QARSHI SHAHRI",
+        "name_ru":  "КАРШИ ГОРОД",
+        "name_en":  "KARSHI TOWN",
+        "name_uz_cyr":  "ҚАРШИ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1816,
+        "region_id":  18,
+        "name_uz":  "SHAHRISABZ SHAHRI",
+        "name_ru":  "ШАХРИСАБЗ ГОРОД",
+        "name_en":  "SHAHRISABZ TOWN",
+        "name_uz_cyr":  "ШАҲРИСАБЗ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  1901,
+        "region_id":  19,
+        "name_uz":  "TERMIZ TUMANI",
+        "name_ru":  "ТЕРМИЗСКИЙ ТУМАН",
+        "name_en":  "TERMIZ DISTRICT",
+        "name_uz_cyr":  "ТЕРМИЗ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1902,
+        "region_id":  19,
+        "name_uz":  "BOYSUN TUMANI",
+        "name_ru":  "БАЙСУНСКИЙ ТУМАН",
+        "name_en":  "BOYSUN DISTRICT",
+        "name_uz_cyr":  "БОЙСУН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1903,
+        "region_id":  19,
+        "name_uz":  "MUZRABOT TUMANI",
+        "name_ru":  "МУЗРАБОТСКИЙ ТУМАН",
+        "name_en":  "MUZRABOT DISTRICT",
+        "name_uz_cyr":  "МУЗРАБОТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1904,
+        "region_id":  19,
+        "name_uz":  "SARIOSIYO TUMANI",
+        "name_ru":  "САРИАСИЙСКИЙ ТУМАН",
+        "name_en":  "SARIOSIYO DISTRICT",
+        "name_uz_cyr":  "САРИОСИЁ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1905,
+        "region_id":  19,
+        "name_uz":  "SHARG‘UN TUMANI",
+        "name_ru":  "ШАРГУНЬСКИЙ ТУМАН",
+        "name_en":  "SHARGUN DISTRICT",
+        "name_uz_cyr":  "ШАРҒУН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1906,
+        "region_id":  19,
+        "name_uz":  "SHO‘RCHI TUMANI",
+        "name_ru":  "ШУРЧИНСКИЙ ТУМАН",
+        "name_en":  "SHURCHI DISTRICT",
+        "name_uz_cyr":  "ШЎРЧИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1907,
+        "region_id":  19,
+        "name_uz":  "OLTINSOY TUMANI",
+        "name_ru":  "АЛТИНСАЙСКИЙ ТУМАН",
+        "name_en":  "OLTINSOY DISTRICT",
+        "name_uz_cyr":  "ОЛТИНСОЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1908,
+        "region_id":  19,
+        "name_uz":  "QUMQO‘RG‘ON TUMANI",
+        "name_ru":  "КУМКУРГАНСКИЙ ТУМАН",
+        "name_en":  "KUMKURGON DISTRICT",
+        "name_uz_cyr":  "ҚУМҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1909,
+        "region_id":  19,
+        "name_uz":  "JARQO‘RG‘ON TUMANI",
+        "name_ru":  "ДЖАРКУРГАНСКИЙ ТУМАН",
+        "name_en":  "JARGURGON DISTRICT",
+        "name_uz_cyr":  "ЖАРҚЎРҒОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1910,
+        "region_id":  19,
+        "name_uz":  "QIZIRIQ TUMANI",
+        "name_ru":  "КИЗИРИКСКИЙ ТУМАН",
+        "name_en":  "KIZIRIK DISTRICT",
+        "name_uz_cyr":  "ҚИЗИРИҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1911,
+        "region_id":  19,
+        "name_uz":  "ANGOR TUMANI",
+        "name_ru":  "АНГОРСКИЙ ТУМАН",
+        "name_en":  "ANGOR DISTRICT",
+        "name_uz_cyr":  "АНГОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1912,
+        "region_id":  19,
+        "name_uz":  "SHEROBOD TUMANI",
+        "name_ru":  "ШЕРАБАДСКИЙ ТУМАН",
+        "name_en":  "SHEROBOD DISTRICT",
+        "name_uz_cyr":  "ШЕРОБОД ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1913,
+        "region_id":  19,
+        "name_uz":  "UZUN TUMANI",
+        "name_ru":  "УЗУНСКИЙ ТУМАН",
+        "name_en":  "UZUN DISTRICT",
+        "name_uz_cyr":  "УЗУН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1914,
+        "region_id":  19,
+        "name_uz":  "DENOV TUMANI",
+        "name_ru":  "ДЕНОВСКИЙ ТУМАН",
+        "name_en":  "DENOV DISTRICT",
+        "name_uz_cyr":  "ДЕНОВ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1409,
+        "region_id":  14,
+        "name_uz":  "PASTDARG‘OM TUMANI",
+        "name_ru":  "ПАСТДАРГОМСКИЙ ТУМАН",
+        "name_en":  "PASTDARGOM DISTRICT",
+        "name_uz_cyr":  "ПАСТДАРҒОМ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2204,
+        "region_id":  22,
+        "name_uz":  "URGANCH TUMANI",
+        "name_ru":  "УРГАНЧСКИЙ ТУМАН",
+        "name_en":  "URGENCH DISTRICT",
+        "name_uz_cyr":  "УРГАНЧ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2205,
+        "region_id":  22,
+        "name_uz":  "SHOVOT TUMANI",
+        "name_ru":  "ШАВАТСКИЙ ТУМАН",
+        "name_en":  "SHOVOT DISTRICT",
+        "name_uz_cyr":  "ШОВОТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2206,
+        "region_id":  22,
+        "name_uz":  "XONQA TUMANI",
+        "name_ru":  "ХОНКИНСКИЙ ТУМАН",
+        "name_en":  "XONKA DISTRICT",
+        "name_uz_cyr":  "ХОНҚА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2207,
+        "region_id":  22,
+        "name_uz":  "BOG‘OT TUMANI",
+        "name_ru":  "БОГОТСКИЙ ТУМАН",
+        "name_en":  "BOGOT DISTRICT",
+        "name_uz_cyr":  "БОҒОТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2208,
+        "region_id":  22,
+        "name_uz":  "YANGIBOZOR TUMANI",
+        "name_ru":  "ЯНГИБАЗАРСКИЙ ТУМАН",
+        "name_en":  "YANGIBOZOR DISTRICT",
+        "name_uz_cyr":  "ЯНГИБОЗОР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2209,
+        "region_id":  22,
+        "name_uz":  "QO‘SHKO‘PIR TUMANI",
+        "name_ru":  "КУШКУПИРСКИЙ ТУМАН",
+        "name_en":  "KUSHKOOPIR DISTRICT",
+        "name_uz_cyr":  "ҚЎШКЎПИР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2210,
+        "region_id":  22,
+        "name_uz":  "XIVA TUMANI",
+        "name_ru":  "ХИВИНСКИЙ ТУМАН",
+        "name_en":  "KHIVA DISTRICT",
+        "name_uz_cyr":  "ХИВА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2211,
+        "region_id":  22,
+        "name_uz":  "URGANCH SHAHRI",
+        "name_ru":  "УРГЕНЧ ГОРОД",
+        "name_en":  "URGENCH TOWN",
+        "name_uz_cyr":  "УРГАНЧ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  739001242,
+        "region_id":  18,
+        "name_uz":  "TALIMARJON SHAHARCHASI",
+        "name_ru":  "ТАЛИМАРЖАН ГОРОД",
+        "name_en":  "TALIMARJAN TOWN",
+        "name_uz_cyr":  "ТАЛИМАРЖОН ШАҲАРЧАСИ",
+        "active":  1
+    },
+    {
+        "id":  2212,
+        "region_id":  22,
+        "name_uz":  "XIVA SHAHRI",
+        "name_ru":  "ХИВА ГОРОД",
+        "name_en":  "KHIVA TOWN",
+        "name_uz_cyr":  "ХИВА ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2213,
+        "region_id":  22,
+        "name_uz":  "PITNAK SHAHRI",
+        "name_ru":  "ПИТНАК ГОРОД",
+        "name_en":  "PITNAK TOWN",
+        "name_uz_cyr":  "ПИТНАК ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2301,
+        "region_id":  23,
+        "name_uz":  "NUKUS TUMANI",
+        "name_ru":  "НУКУССКИЙ ТУМАН",
+        "name_en":  "NUKUS DISTRICT",
+        "name_uz_cyr":  "НУКУС ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2302,
+        "region_id":  23,
+        "name_uz":  "KUNGIROT TUMANI",
+        "name_ru":  "КУНГУРАДСКИЙ ТУМАН",
+        "name_en":  "KUNGUROD DISTRICT",
+        "name_uz_cyr":  "КУНГИРОТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  1805,
+        "region_id":  18,
+        "name_uz":  "QAMASHI TUMANI",
+        "name_ru":  "КАМАШИНСКИЙ ТУМАН",
+        "name_en":  "KAMASHI DISTRICT",
+        "name_uz_cyr":  "ҚАМАШИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2303,
+        "region_id":  23,
+        "name_uz":  "MO‘YNOQ TUMANI",
+        "name_ru":  "МУЙНАКСКИЙ ТУМАН",
+        "name_en":  "MUYNOK DISTRICT",
+        "name_uz_cyr":  "МЎЙНОҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2305,
+        "region_id":  23,
+        "name_uz":  "TO‘RTKO‘L TUMANI",
+        "name_ru":  "ТУРТКУЛЬСКИЙ ТУМАН",
+        "name_en":  "TURTKUL DISTRICT",
+        "name_uz_cyr":  "ТЎРТКЎЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2306,
+        "region_id":  23,
+        "name_uz":  "ELLIKQAL’A TUMANI",
+        "name_ru":  "ЭЛЛИККАЛИНСКИЙ ТУМАН",
+        "name_en":  "ELLIKKALA DISTRICT",
+        "name_uz_cyr":  "ЭЛЛИКҚАЛЪА ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2307,
+        "region_id":  23,
+        "name_uz":  "KEGEYLI TUMANI",
+        "name_ru":  "КЕГЕЙЛИЙСКИЙ ТУМАН",
+        "name_en":  "KEGEYLI DISTRICT",
+        "name_uz_cyr":  "КЕГЕЙЛИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2308,
+        "region_id":  23,
+        "name_uz":  "AMUDARYO TUMANI",
+        "name_ru":  "АМУДАРИНСКИЙ ТУМАН",
+        "name_en":  "AMUDARYO DISTRICT",
+        "name_uz_cyr":  "АМУДАРЁ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2309,
+        "region_id":  23,
+        "name_uz":  "BERUNIY TUMANI",
+        "name_ru":  "БЕРУНИЙСКИЙ ТУМАН",
+        "name_en":  "BERUNIY DISTRICT",
+        "name_uz_cyr":  "БЕРУНИЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2310,
+        "region_id":  23,
+        "name_uz":  "KANLIKOL TUMANI",
+        "name_ru":  "КАНЛЫКУЛЬСКИЙ ТУМАН",
+        "name_en":  "KANLIKOOL DISTRICT",
+        "name_uz_cyr":  "КАНЛИКОЛ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2311,
+        "region_id":  23,
+        "name_uz":  "CHIMBOY TUMANI",
+        "name_ru":  "ЧИМБАЙСКИЙ ТУМАН",
+        "name_en":  "CHIMBOY DISTRICT",
+        "name_uz_cyr":  "ЧИМБОЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2312,
+        "region_id":  23,
+        "name_uz":  "SHUMANAY TUMANI",
+        "name_ru":  "ШУМАНАЙСКИЙ ТУМАН",
+        "name_en":  "SHOMANAY DISTRICT",
+        "name_uz_cyr":  "ШУМАНАЙ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2313,
+        "region_id":  23,
+        "name_uz":  "TAXTAKO‘PIR TUMANI",
+        "name_ru":  "ТАХТАКУПЫРСКИЙ ТУМАН",
+        "name_en":  "TAKHTAKUPIR DISTRICT",
+        "name_uz_cyr":  "ТАХТАКЎПИР ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2314,
+        "region_id":  23,
+        "name_uz":  "XOJELI TUMANI",
+        "name_ru":  "ХОДЖЕЙЛИСКИЙ ТУМАН",
+        "name_en":  "XOJEYLI DISTRICT",
+        "name_uz_cyr":  "ХОЖЕЛИ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2315,
+        "region_id":  23,
+        "name_uz":  "BOZATAU TUMANI",
+        "name_ru":  "БОЗАТАУСКИЙ ТУМАН",
+        "name_en":  "BOZATAU DISTRICT",
+        "name_uz_cyr":  "БОЗАТАУ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2316,
+        "region_id":  23,
+        "name_uz":  "QORAUZOQ TUMANI",
+        "name_ru":  "КАРАУЗЯКСКИЙ ТУМАН",
+        "name_en":  "KORAUZOK DISTRICT",
+        "name_uz_cyr":  "ҚОРАУЗОҚ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  2317,
+        "region_id":  23,
+        "name_uz":  "NUKUS SHAHRI",
+        "name_ru":  "НУКУС ГОРОД",
+        "name_en":  "NUKUS TOWN",
+        "name_uz_cyr":  "НУКУС ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2318,
+        "region_id":  23,
+        "name_uz":  "BERUNIY SHAHRI",
+        "name_ru":  "БЕРУНИЙ ГОРОД",
+        "name_en":  "BERUNI TOWN",
+        "name_uz_cyr":  "БЕРУНИЙ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2319,
+        "region_id":  23,
+        "name_uz":  "KUNGIROT SHAHRI",
+        "name_ru":  "КУНГИРОТ ГОРОД",
+        "name_en":  "KUNGIROT TOWN",
+        "name_uz_cyr":  "КУНГИРОТ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2320,
+        "region_id":  23,
+        "name_uz":  "TAKIYATOSH SHAHRI",
+        "name_ru":  "ТАКИЯТОШ ГОРОД",
+        "name_en":  "TAKIYATASH TOWN",
+        "name_uz_cyr":  "ТАКИЯТОШ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2321,
+        "region_id":  23,
+        "name_uz":  "TO‘RTKO‘L SHAHRI",
+        "name_ru":  "ТУРТКУЛ ГОРОД",
+        "name_en":  "TURTKUL TOWN",
+        "name_uz_cyr":  "ТЎРТКЎЛ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  2322,
+        "region_id":  23,
+        "name_uz":  "XOJELI SHAHRI",
+        "name_ru":  "ХОЖЕЛИ ГОРОД",
+        "name_en":  "KHODJELI TOWN",
+        "name_uz_cyr":  "ХОЖЕЛИ ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  739001120,
+        "region_id":  11,
+        "name_uz":  "NURAFSHON SHAHRI",
+        "name_ru":  "ГОРОД НУРАФШАН",
+        "name_en":  "NURAFSHAN CITY",
+        "name_uz_cyr":  "НУРАФШОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  739001121,
+        "region_id":  11,
+        "name_uz":  "OHANGARON SHAHRI",
+        "name_ru":  "ГОРОД АХАНГАРАН",
+        "name_en":  "AKHANGARON CITY",
+        "name_uz_cyr":  "ОҲАНГАРОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  739001100,
+        "region_id":  13,
+        "name_uz":  "SHAROF-RASHIDOV TUMANI",
+        "name_ru":  "ШАРАФ-РАШИДОВСКИЙ РАЙОН",
+        "name_en":  "SHARAF-RASHIDOV DISTRICT",
+        "name_uz_cyr":  "ШАРОФ-РАШИДОВ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001180,
+        "region_id":  21,
+        "name_uz":  "G‘OZG‘ON SHAHRI",
+        "name_ru":  "ГОРОД ГАЗГАН",
+        "name_en":  "GAZGAN CITY",
+        "name_uz_cyr":  "ҒОЗҒОН ШАҲРИ",
+        "active":  1
+    },
+    {
+        "id":  739001240,
+        "region_id":  23,
+        "name_uz":  "TAXIATOSH TUMANI",
+        "name_ru":  "ТАХИАТАШСКИЙ РАЙОН",
+        "name_en":  "TAKHIATASH DISTRICT",
+        "name_uz_cyr":  "ТАХИАТОШ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001241,
+        "region_id":  18,
+        "name_uz":  "YANGI NISHON TUMANI",
+        "name_ru":  "ЯНГИНИШАНСКИЙ ТУМАН",
+        "name_en":  "YANGINISHAN DISTRICT",
+        "name_uz_cyr":  "ЯНГИ НИШОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001160,
+        "region_id":  10,
+        "name_uz":  "YANGIHAYOT TUMANI",
+        "name_ru":  "ЯНГИХАЯТСКИЙ РАЙОН",
+        "name_en":  "YANGIHAYAT DISTRICT",
+        "name_uz_cyr":  "ЯНГИҲАЁТ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001243,
+        "region_id":  18,
+        "name_uz":  "USMON YUSUPOV TIMANI",
+        "name_ru":  "УСМАН ЮСУПОВСКИЙ ТУМАН",
+        "name_en":  "USMAN YUSUPOV DISTRICT",
+        "name_uz_cyr":  "УСМОН ЮСУПОВ ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001200,
+        "region_id":  16,
+        "name_uz":  "YANGI NAMANGAN TUMANI",
+        "name_ru":  "ЯНГИ НАМАНГАНСКИЙ РАЙОН",
+        "name_en":  "YANGI NAMANGAN DISTRICT",
+        "name_uz_cyr":  "ЯНГИ НАМАНГАН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001140,
+        "region_id":  17,
+        "name_uz":  "BO‘STON TUMANI",
+        "name_ru":  "БОСТОНСКИЙ РАЙОН",
+        "name_en":  "BOSTON DISTRICT",
+        "name_uz_cyr":  "БЎСТОН ТУМАНИ",
+        "active":  1
+    },
+    {
+        "id":  739001141,
+        "region_id":  22,
+        "name_uz":  "TUPROQQAL’A TUMANI",
+        "name_ru":  "ТУПРАККАЛИНСКИЙ РАЙОН",
+        "name_en":  "TUPROQQALA DISTRICT",
+        "name_uz_cyr":  "ТУПРОҚҚАЛЪА ТУМАНИ",
+        "active":  1
+    }
+]

@@ -1,33 +1,27 @@
 const express = require("express")
 const app = express()
-const {postgres} = require("./modules/pg/postgres")
+const { postgres } = require("./modules/pg/postgres")
 const expressConfiguration = require("./middlewares/expressConfiguration")
-const {expressErrorHandler} = require("./middlewares/expressErrorHandler")
+const { expressErrorHandler } = require("./middlewares/expressErrorHandler")
 const databaseMiddleware = require("./middlewares/database")
-const {checkGuideActivityCroneJob} = require("./crone-jobs/checkActivity")
-const routes = require("../src/routes/route")
-const {PORT} = require("./modules/config")
-const {insertLangsToDatabase,insertRegionsToDatabase} = require("./temporary/insertLangsRegs")
-const {insertOrganizations} = require("./temporary/insertOrganizations")
-async function server(){
-    try{
-        app.listen(PORT,()=>{
-            console.log(`server ready ${PORT}`)
-        })
+const routes = require("./routes/route")
+const { PORT } = require("./modules/config")
+const { seedReference } = require("./helpers/seedReference")
 
-        db = await postgres();
-      //  checkGuideActivityCroneJob(db);
-        await databaseMiddleware(db,app);
+async function server() {
+    try {
+        const db = await postgres();
+        await seedReference(db);
+        await databaseMiddleware(db, app);
         await expressConfiguration(app)
-     //      await insertOrganizations(db)
-    //    await insertRegionsToDatabase(db)
-   //    await insertLangsToDatabase(db)
-    }catch(err){
-         console.log("Server error : " ,err)
-    }
-    finally{
-       routes(app);
-       app.use(expressErrorHandler)
+        routes(app);
+        app.use(expressErrorHandler)
+
+        app.listen(PORT, () => {
+            console.log(`server ready on ${PORT}`)
+        })
+    } catch (err) {
+        console.log("Server error : ", err)
     }
 }
 

@@ -1,43 +1,29 @@
 {
-  "name": "guide-catalog",
+  "name": "andijon-polka-backend",
   "version": "1.0.0",
-  "description": "this system helps to automize guides registering process",
+  "description": "Andijon Polka event participant registration backend (GSP passport API + admin)",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js",
-    "devStart": "nodemon index.js",
-    "build": "echo 'No build step required for Node.js backend'",
-    "test": "jest"
+    "dev": "nodemon index.js"
   },
   "keywords": [
-    "Guides"
+    "andijon-polka",
+    "registration"
   ],
-  "author": "Egamberdiyev Akobir",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.4",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.0",
-    "multer": "^1.4.5-lts.1",
-    "nanoid": "^3.3.6",
-    "node-cron": "^3.0.2",
-    "nodemailer": "^6.9.4",
     "pg": "^8.11.0",
-    "puppeteer": "^20.5.0",
-    "qrcode": "^1.5.3",
     "qs": "^6.13.0",
-    "sequelize": "^6.31.1",
-    "uuid": "^11.1.0"
+    "sequelize": "^6.31.1"
   },
   "devDependencies": {
-    "jest": "^29.6.2",
-    "nodemon": "^2.0.22",
-    "sequelize-cli": "^6.6.1"
+    "nodemon": "^2.0.22"
   }
 }

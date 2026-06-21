@@ -1,28 +1,29 @@
 require("dotenv").config()
 module.exports = {
-      PORT:process.env.PORT,
-      DATABASE_URL:process.env.DATABASE_URL,
-      IMAGE_ADDRESS:process.env.IMAGE_ADDRESS,
-      HASHNUMBER:process.env.HASHNUMBER,
-      TOKEN_KEY:process.env.TOKEN_KEY,
-      QRCODE_ADDRESS:process.env.QRCODE_ADDRESS,
-      ONE_ID_CLIENT_ID:process.env.ONE_ID_CLIENT_ID,
-      ONE_ID_CLIENT_SECRET:process.env.ONE_ID_CLIENT_SECRET,
-      ONE_ID_OAUTH_URL:process.env.ONE_ID_OAUTH_URL,
-      REDIRECT_URI:process.env.REDIRECT_URI,
-      ONE_ID_SCOPE:process.env.ONE_ID_SCOPE,
-      DB_PORT:process.env.DB_PORT,
-      DB_NAME:process.env.DB_NAME,
-      DB_USER:process.env.DB_USER,
-      DB_PASSWORD:process.env.DB_PASSWORD,
-      BADGEDURATIONYEAR:process.env.BADGEDURATIONYEAR,
-      NAMEOFISSUER:process.env.NAMEOFISSUER,
-      SENDER_USER:process.env.SENDER_USER,
-      APP_PASSWORD:process.env.APP_PASSWORD,
-      MB_CLIENT_ID:process.env.MB_CLIENT_ID,
-      MB_CLIENT_SECRET:process.env.MB_CLIENT_SECRET,
-      MB_USERNAME:process.env.MB_USERNAME,
-      MB_PASSWORD:process.env.MB_PASSWORD,
-      MB_URL:process.env.MB_URL,
-      MB_URL_PASSPORT:process.env.MB_URL_PASSPORT
+      // Server
+      PORT: process.env.PORT || 5000,
+      DATABASE_URL: process.env.DATABASE_URL,
+      IMAGE_ADDRESS: process.env.IMAGE_ADDRESS,
+
+      // Auth
+      HASHNUMBER: process.env.HASHNUMBER || 10,
+      TOKEN_KEY: process.env.TOKEN_KEY || "andijon_polka_secret",
+
+      // Default admin (seeded on first run)
+      ADMIN_LOGIN: process.env.ADMIN_LOGIN || "admin",
+      ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || "admin123",
+
+      // Passport lookup
+      // Keep MOCK=true until the real APIs are provided.
+      PASSPORT_MOCK: (process.env.PASSPORT_MOCK || "true") === "true",
+      // Participants younger than this are routed to the minor (under-18) API.
+      MINOR_AGE: Number(process.env.MINOR_AGE || 18),
+
+      // Adult API (JSHSHIR + birth date)
+      ADULT_API_URL: process.env.ADULT_API_URL,
+      ADULT_API_TOKEN: process.env.ADULT_API_TOKEN,
+
+      // Minor API (under 18)
+      MINOR_API_URL: process.env.MINOR_API_URL,
+      MINOR_API_TOKEN: process.env.MINOR_API_TOKEN,
 }
