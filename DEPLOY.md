@@ -86,25 +86,25 @@ npm run build      # dist/ yaratiladi, /admin/ ostida ishlaydi
 ## 5. nginx
 
 ```bash
-sudo cp ~/AndijonPolka/deploy/nginx-andijonpolka.conf /etc/nginx/sites-available/polka.madaniyhayot.uz
-sudo nano /etc/nginx/sites-available/polka.madaniyhayot.uz   # server_name ni o'z subdomeningizga moslang
-sudo ln -s /etc/nginx/sites-available/polka.madaniyhayot.uz /etc/nginx/sites-enabled/
+sudo cp ~/AndijonPolka/deploy/nginx-andijonpolka.conf /etc/nginx/sites-available/andijonpolka.uz
+sudo ln -s /etc/nginx/sites-available/andijonpolka.uz /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
 Tekshirish:
-- Sayt:  `https://polka.madaniyhayot.uz/`
-- Admin: `https://polka.madaniyhayot.uz/admin/`  (login: `.env` dagi ADMIN_LOGIN / ADMIN_PASSWORD)
-- API:   `https://polka.madaniyhayot.uz/api/site/count`  → `{"success":true,...}`
+- Sayt:  `https://andijonpolka.uz/`
+- Admin: `https://andijonpolka.uz/admin/`  (login: `.env` dagi ADMIN_LOGIN / ADMIN_PASSWORD)
+- API:   `https://andijonpolka.uz/api/site/count`  → `{"success":true,...}`
 
-## 6. HTTPS / Load balancer
+## 6. Domen / HTTPS / Load balancer
 
 Bu serverда SSL kerak emas — **HTTPS load balancer'da tugaydi** (mavjud saytlardagidek).
 nginx 80-portда HTTP qabul qiladi, config'da `X-Forwarded-Proto https` qattiq qo'yilgan.
 
-Qilish kerak: load balancer (va DNS) da **`polka.madaniyhayot.uz`** subdomenini shu serverga
-(`192.168.100.11`, 80-port) yo'naltiring — boshqa `*.madaniyhayot.uz` saytlaridagi kabi.
+Qilish kerak: **`andijonpolka.uz`** (va `www.andijonpolka.uz`) domenini DNS + load balancer'da
+shu serverga (`192.168.100.11`, 80-port) yo'naltiring. Frontendlar nisbiy `/api/...` yo'lini
+ishlatgani uchun domen istalgancha bo'lishi mumkin — qayta build shart emas.
 
 ---
 
