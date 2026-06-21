@@ -86,24 +86,25 @@ npm run build      # dist/ yaratiladi, /admin/ ostida ishlaydi
 ## 5. nginx
 
 ```bash
-sudo cp ~/AndijonPolka/deploy/nginx-andijonpolka.conf /etc/nginx/sites-available/andijonpolka.conf
-sudo nano /etc/nginx/sites-available/andijonpolka.conf   # server_name ni o'z domeningizga o'zgartiring
-sudo ln -s /etc/nginx/sites-available/andijonpolka.conf /etc/nginx/sites-enabled/
+sudo cp ~/AndijonPolka/deploy/nginx-andijonpolka.conf /etc/nginx/sites-available/polka.madaniyhayot.uz
+sudo nano /etc/nginx/sites-available/polka.madaniyhayot.uz   # server_name ni o'z subdomeningizga moslang
+sudo ln -s /etc/nginx/sites-available/polka.madaniyhayot.uz /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl reload nginx
 ```
 
 Tekshirish:
-- Sayt:  `http://DOMEN/`
-- Admin: `http://DOMEN/admin/`  (login: `.env` dagi ADMIN_LOGIN / ADMIN_PASSWORD)
-- API:   `http://DOMEN/api/site/count`  → `{"success":true,...}`
+- Sayt:  `https://polka.madaniyhayot.uz/`
+- Admin: `https://polka.madaniyhayot.uz/admin/`  (login: `.env` dagi ADMIN_LOGIN / ADMIN_PASSWORD)
+- API:   `https://polka.madaniyhayot.uz/api/site/count`  → `{"success":true,...}`
 
-## 6. (Tavsiya) HTTPS — SSL sertifikat
+## 6. HTTPS / Load balancer
 
-```bash
-sudo apt-get install -y certbot python3-certbot-nginx
-sudo certbot --nginx -d polka.example.uz
-```
+Bu serverда SSL kerak emas — **HTTPS load balancer'da tugaydi** (mavjud saytlardagidek).
+nginx 80-portда HTTP qabul qiladi, config'da `X-Forwarded-Proto https` qattiq qo'yilgan.
+
+Qilish kerak: load balancer (va DNS) da **`polka.madaniyhayot.uz`** subdomenini shu serverga
+(`192.168.100.11`, 80-port) yo'naltiring — boshqa `*.madaniyhayot.uz` saytlaridagi kabi.
 
 ---
 
