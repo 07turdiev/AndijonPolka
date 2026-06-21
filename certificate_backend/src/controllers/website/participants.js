@@ -2,23 +2,32 @@ const reply = require("../../helpers/reply")
 const { searchPerson } = require("../../helpers/passport")
 const { savePhoto } = require("../../helpers/savePhoto")
 
+// documentTypeId for the "Passport (PINFL)" type — searched by PINFL
+const PINFL_DOC_TYPE = 7
+
 // Normalize/validate the search keys coming from the client
 function readSearchInput(body) {
-    const pinfl = (body.pinfl || "").toString().trim()
+    const documentTypeId = Number(body.documentTypeId) || PINFL_DOC_TYPE
+    const pinfl = (body.pinfl || "").toString().replace(/\D/g, "").trim()
+    const seria = (body.seria || "").toString().trim().toUpperCase()
+    const number = (body.number || "").toString().trim()
     const birth_date = (body.birth_date || "").toString().trim()
-    return { pinfl, birth_date }
+    return { documentTypeId, pinfl, seria, number, birth_date }
 }
 
 // Returns an error message string if invalid, otherwise null
-function validateInput({ pinfl, birth_date }) {
-    if (!pinfl || !birth_date) {
-        return "JSHSHIR va tug'ilgan sanani kiriting"
-    }
-    if (!/^\d{14}$/.test(pinfl)) {
-        return "JSHSHIR 14 ta raqamdan iborat bo'lishi kerak"
-    }
+function validateInput({ documentTypeId, pinfl, seria, number, birth_date }) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(birth_date)) {
-        return "Tug'ilgan sana noto'g'ri (YYYY-MM-DD)"
+        return "Tug'ilgan sanani to'g'ri kiriting"
+    }
+    if (documentTypeId === PINFL_DOC_TYPE) {
+        if (!/^\d{14}$/.test(pinfl)) {
+            return "JSHSHIR 14 ta raqamdan iborat bo'lishi kerak"
+        }
+    } else {
+        if (!seria || !number) {
+            return "Hujjat seriyasi va raqamini kiriting"
+        }
     }
     return null
 }

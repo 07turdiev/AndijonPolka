@@ -1,23 +1,35 @@
 <script>
+import { RouterView } from 'vue-router'
+import Header from './layouts/Header.vue'
+import Footer from './layouts/Footer.vue'
 export default {
-  name: 'App'
+  components: {
+    Header,
+    Footer,
+  },
 }
 </script>
 
 <template>
-  <RouterView />
+  <div class="app-shell">
+    <Header/>
+    <main class="app-main">
+      <RouterView />
+    </main>
+    <Footer/>
+  </div>
 </template>
 
-<style>
-:root {
-  --brand: #1d4ed8;
-  --brand-dark: #1e3a8a;
+<style scoped>
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: #eef2f9;
-  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: #1f2937;
+/* Offset the fixed 60px header so content isn't hidden underneath,
+   and let main grow so the footer sticks to the bottom */
+.app-main {
+  flex: 1 0 auto;
+  padding-top: 60px;
 }
 </style>

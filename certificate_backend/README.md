@@ -29,11 +29,11 @@ default admin (`.env` dagi `ADMIN_LOGIN`/`ADMIN_PASSWORD`) seed qilinadi.
 | GET | `/regions` | Viloyatlar ro'yxati |
 | GET | `/districts?region_id=17` | Tumanlar (viloyat bo'yicha) |
 | GET | `/count` | Ro'yxatdan o'tganlar soni |
-| POST | `/search` | Qidirish — `{ pinfl?, document?, birth_date }` → ma'lumot + foto |
-| POST | `/register` | Ro'yxatdan o'tish — `{ pinfl?, document?, birth_date, phone_number?, region_id?, district_id? }` |
+| POST | `/search` | Qidirish — `{ documentTypeId, pinfl?, seria?, number?, birth_date }` → ma'lumot + foto |
+| POST | `/register` | Ro'yxatdan o'tish — yuqoridagi + `{ phone_number?, region_id?, district_id? }` |
 
-`POST /search` va `/register` majburiy maydonlari: `pinfl` (14 raqam) + `birth_date` (YYYY-MM-DD).
-Javobda `is_minor` — qatnashuvchi 18 yoshgacha bo'lsa `true`.
+`documentTypeId` = 7 bo'lsa `pinfl` (14 raqam) majburiy; aks holda `seria` + `number`.
+`birth_date` (YYYY-MM-DD) doim majburiy. Javobda `is_minor` — 18 yoshgacha bo'lsa `true`.
 Ro'yxatdan o'tishda ma'lumot xavfsizlik uchun **serverda qaytadan API'dan tekshiriladi**
 (mijozdan kelgan shaxsiy ma'lumotga ishonilmaydi).
 
@@ -49,12 +49,21 @@ Ro'yxatdan o'tishda ma'lumot xavfsizlik uchun **serverda qaytadan API'dan tekshi
 
 Fotosuratlar `public/photos/` ga saqlanadi, `/api/cdn/photos/<pinfl>.jpg` orqali ochiladi.
 
-## Real API'larga ulash
-Ikkita provayder alohida fayllarda:
-- `src/helpers/providers/adultApi.js` — kattalar API
-- `src/helpers/providers/minorApi.js` — 18 yoshgacha bolalar API
+## Pasport API (itg.madaniyat.uz)
+Bitta API — `POST /api/web/MV/PersonGetByPassportData` (provayder:
+`src/helpers/providers/passportApi.js`). `.env`:
+```
+PASSPORT_MOCK=false
+PASSPORT_API_URL=https://itg.madaniyat.uz/api/web/MV/PersonGetByPassportData
+PASSPORT_API_AUTH=Basic <token>
+```
+`PASSPORT_MOCK=true` bo'lsa — test ma'lumotlari (real API chaqirilmaydi).
 
-`.env` da `PASSPORT_MOCK=false` qiling va `ADULT_API_URL`/`ADULT_API_TOKEN`,
-`MINOR_API_URL`/`MINOR_API_TOKEN` ni to'ldiring. So'rov tanasi/sarlavhasi va javobni
-o'girish (`normalize`) real API shartnomasiga moslab tegishli provayder faylida
-to'g'rilanadi. Qolgan kod (controller, yo'naltirish, saqlash) o'zgarmaydi.
+**Hujjat turlari (documentTypeId):** 7 = Pasport (PINFL) — `pinfl` orqali; 6 = ID-karta,
+2 = Guvohnoma, 3 = Fuqarolik pasporti — `seria` + `number` orqali. Barchasi
+`birth_date` (YYYY-MM-DD) bilan. Topilmasa API HTTP 400 + `persoN_NOT_FOUND` qaytaradi.
+
+So'rov: `{ seria, number, dateOfBirth, documentTypeId, pinfl, includePhoto }`.
+Javob: yassi obyekt (`firstName/lastName/middleName/pinfl/docSeria/docNumber/genderId/
+nationality/citizenship/birthOn/photo`) → `mapPerson()` orqali ichki formatga o'giriladi.
+`is_minor` belgisi faqat ko'rsatish uchun tug'ilgan sanadan hisoblanadi.

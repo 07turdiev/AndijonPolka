@@ -19,7 +19,7 @@
             </router-link>
           </li>
           <li>
-            <a href="#" @click.prevent="logout" class="nav-link">
+            <a href="#" @click.prevent="askLogout" class="nav-link">
               <i class="pi pi-sign-out"></i><span>Chiqish</span>
             </a>
           </li>
@@ -31,11 +31,24 @@
         <router-view />
       </div>
     </main>
+
+    <Dialog v-model:visible="logoutDialog" header="Chiqish" :modal="true" :style="{ width: '400px' }" :draggable="false">
+      <div class="logout-body">
+        <i class="pi pi-sign-out logout-icon"></i>
+        <p>Haqiqatdan ham tizimdan chiqmoqchimisiz?</p>
+      </div>
+      <template #footer>
+        <Button label="Yo‘q" class="p-button-text" @click="logoutDialog = false" />
+        <Button label="Ha, chiqish" icon="pi pi-sign-out" class="p-button-danger" @click="confirmLogout" />
+      </template>
+    </Dialog>
+
     <Toast />
   </div>
 </template>
 
 <script>
+import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 
@@ -44,11 +57,14 @@ export default {
   setup() {
     const store = useStore()
     const router = useRouter()
-    const logout = () => {
+    const logoutDialog = ref(false)
+    const askLogout = () => { logoutDialog.value = true }
+    const confirmLogout = () => {
+      logoutDialog.value = false
       store.dispatch('logout')
       router.push('/login')
     }
-    return { logout }
+    return { logoutDialog, askLogout, confirmLogout }
   }
 }
 </script>
@@ -77,4 +93,7 @@ export default {
   .content { margin-left: 0; }
   .content-body { padding: 1rem; }
 }
+.logout-body { display: flex; align-items: center; gap: 14px; padding: 6px 0; }
+.logout-icon { font-size: 26px; color: #ef4444; }
+.logout-body p { margin: 0; font-size: 15px; color: #334155; }
 </style>

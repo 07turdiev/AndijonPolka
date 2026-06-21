@@ -13,17 +13,17 @@ module.exports = {
       ADMIN_LOGIN: process.env.ADMIN_LOGIN || "admin",
       ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || "admin123",
 
-      // Passport lookup
-      // Keep MOCK=true until the real APIs are provided.
+      // Passport lookup — single API (itg.madaniyat.uz MV/PersonGetByPassportData).
+      // Handles all document types (PINFL passport, ID card, birth certificate, passport).
       PASSPORT_MOCK: (process.env.PASSPORT_MOCK || "true") === "true",
-      // Participants younger than this are routed to the minor (under-18) API.
+      // Used only to show the "under 18" tag (age < MINOR_AGE).
       MINOR_AGE: Number(process.env.MINOR_AGE || 18),
 
-      // Adult API (JSHSHIR + birth date)
-      ADULT_API_URL: process.env.ADULT_API_URL,
-      ADULT_API_TOKEN: process.env.ADULT_API_TOKEN,
-
-      // Minor API (under 18)
-      MINOR_API_URL: process.env.MINOR_API_URL,
-      MINOR_API_TOKEN: process.env.MINOR_API_TOKEN,
+      PASSPORT_API_URL: process.env.PASSPORT_API_URL ||
+            "https://itg.madaniyat.uz/api/web/MV/PersonGetByPassportData",
+      // EITHER provide login + password (Basic header is built automatically) ...
+      PASSPORT_API_LOGIN: process.env.PASSPORT_API_LOGIN,
+      PASSPORT_API_PASSWORD: process.env.PASSPORT_API_PASSWORD,
+      // ... OR provide the full Authorization header value directly, e.g. "Basic xxx"
+      PASSPORT_API_AUTH: process.env.PASSPORT_API_AUTH,
 }

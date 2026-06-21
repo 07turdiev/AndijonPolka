@@ -20,16 +20,33 @@
 
     <!-- Filters -->
     <div class="filters">
-      <InputText v-model="filters.searchWord" placeholder="Qidirish (FISH, JSHSHIR, telefon)" class="f-search" @keyup.enter="applyFilters" />
-      <Dropdown v-model="filters.region_id" :options="regions" optionLabel="name_uz" optionValue="region_id"
-        placeholder="Viloyat" showClear filter class="f-item" @change="onRegionChange" />
-      <Dropdown v-model="filters.district_id" :options="districts" optionLabel="name_uz" optionValue="district_id"
-        placeholder="Tuman" showClear filter class="f-item" :disabled="!filters.region_id" />
-      <Calendar v-model="filters.start_date" dateFormat="dd.mm.yy" placeholder="Dan" showIcon class="f-date" />
-      <Calendar v-model="filters.end_date" dateFormat="dd.mm.yy" placeholder="Gacha" showIcon class="f-date" />
-      <Button label="Filtr" icon="pi pi-search" @click="applyFilters" />
-      <Button label="Tozalash" icon="pi pi-times" class="p-button-secondary" @click="resetFilters" />
-      <Button label="Excel" icon="pi pi-download" class="p-button-success export-btn" :loading="exporting" @click="onExport" />
+      <div class="filter-field search">
+        <label>Qidirish</label>
+        <InputText v-model="filters.searchWord" placeholder="F.I.SH., JSHSHIR yoki telefon" @keyup.enter="applyFilters" />
+      </div>
+      <div class="filter-field">
+        <label>Viloyat</label>
+        <Dropdown v-model="filters.region_id" :options="regions" optionLabel="name_uz" optionValue="region_id"
+          placeholder="Barchasi" showClear filter @change="onRegionChange" />
+      </div>
+      <div class="filter-field">
+        <label>Tuman</label>
+        <Dropdown v-model="filters.district_id" :options="districts" optionLabel="name_uz" optionValue="district_id"
+          placeholder="Barchasi" showClear filter :disabled="!filters.region_id" />
+      </div>
+      <div class="filter-field date">
+        <label>Sana (dan)</label>
+        <Calendar v-model="filters.start_date" dateFormat="dd.mm.yy" placeholder="kk.oo.yy" showIcon />
+      </div>
+      <div class="filter-field date">
+        <label>Sana (gacha)</label>
+        <Calendar v-model="filters.end_date" dateFormat="dd.mm.yy" placeholder="kk.oo.yy" showIcon />
+      </div>
+      <div class="filter-actions">
+        <Button label="Filtr" icon="pi pi-search" @click="applyFilters" />
+        <Button label="Tozalash" icon="pi pi-times" class="p-button-secondary" @click="resetFilters" />
+        <Button label="Excel" icon="pi pi-download" class="p-button-success" :loading="exporting" @click="onExport" />
+      </div>
     </div>
 
     <!-- Table -->
@@ -215,11 +232,26 @@ export default {
 .stat-label { font-size: .85rem; color: #64748b; }
 .stat-card.goal .stat-label { color: #c7d2fe; }
 .stat-value { font-size: 1.8rem; font-weight: 700; margin-top: 4px; }
-.filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; align-items: center; }
-.f-search { min-width: 240px; flex: 1; }
-.f-item { min-width: 160px; }
-.f-date { width: 140px; }
-.export-btn { margin-left: auto; }
+.filters {
+  background: #fff; border-radius: 12px; padding: 16px 18px; margin-bottom: 1.25rem;
+  display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+}
+.filter-field { display: flex; flex-direction: column; gap: 6px; }
+.filter-field label { font-size: 12px; font-weight: 600; color: #64748b; }
+.filter-field.search { flex: 1 1 260px; min-width: 220px; }
+.filter-field:not(.search):not(.date) { flex: 0 1 190px; min-width: 160px; }
+.filter-field.date { flex: 0 1 170px; min-width: 150px; }
+/* Make all controls fill their field */
+.filter-field :deep(.p-inputtext),
+.filter-field :deep(.p-dropdown),
+.filter-field :deep(.p-calendar) { width: 100%; }
+.filter-actions { display: flex; gap: 8px; align-items: flex-end; margin-left: auto; }
+.filter-actions .p-button { white-space: nowrap; }
+@media (max-width: 600px) {
+  .filter-actions { margin-left: 0; width: 100%; }
+  .filter-actions .p-button { flex: 1; }
+}
 .table { background: #fff; border-radius: 12px; overflow: hidden; }
 .thumb { width: 40px; height: 50px; object-fit: cover; border-radius: 4px; }
 .thumb.empty { display: flex; align-items: center; justify-content: center; background: #e5e7eb; color: #9ca3af; }

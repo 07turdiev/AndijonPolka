@@ -45,8 +45,8 @@ function normalize(item) {
 }
 
 // Deterministic fake person for mock mode (same input -> same person)
-function mockPerson({ pinfl, birth_date, minor }) {
-    const seed = (pinfl || "0000").replace(/\D/g, "").slice(-2) || "07"
+function mockPerson({ pinfl, document, birth_date, minor, documentTypeId }) {
+    const seed = ((pinfl || document || "0000").replace(/\D/g, "").slice(-2)) || "07"
     const n = parseInt(seed, 10) || 7
     const FIRST = minor
         ? ["JAVOHIR", "MADINA", "OZODBEK", "SEVINCH", "BEKZOD", "ROBIYA"]
@@ -65,8 +65,8 @@ function mockPerson({ pinfl, birth_date, minor }) {
         nationality: "O'ZBEK",
         citizenship: "O'ZBEKISTON",
         gender: isFemale ? "F" : "M",
-        document: minor ? `BCN${2000000 + n}` : `AA${1000000 + n}`,
-        document_type: minor ? "IDMS_RECV_MJ_BIRTH_CERTS" : "IDMS_RECV_MVD_IDCARD_CITIZEN",
+        document: document || (minor ? `BCN${2000000 + n}` : `AA${1000000 + n}`),
+        document_type: documentTypeId != null ? String(documentTypeId) : (minor ? "2" : "7"),
         photo: MOCK_PHOTO
     }
     return { found: true, code: "1", person, message: "MOCK" }
