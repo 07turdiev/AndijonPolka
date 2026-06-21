@@ -305,8 +305,12 @@ export default {
                   </span>
                 </template>
               </el-input>
-              <el-date-picker ref="dateRef" v-model="birth_date" type="date" value-format="YYYY-MM-DD"
-                :disabled-date="(d) => d > new Date()" class="date-hidden" @change="onPickerChange" />
+              <!-- Kalendar: ota-div overflow:hidden+height:0 bilan to'liq yashiriladi
+                   (Element CSS uni bekor qila olmaydi). Popup body'ga teleport bo'ladi. -->
+              <div class="cal-host">
+                <el-date-picker ref="dateRef" v-model="birth_date" type="date" value-format="YYYY-MM-DD"
+                  style="width:100%" :disabled-date="(d) => d > new Date()" @change="onPickerChange" />
+              </div>
             </div>
           </div>
 
@@ -404,10 +408,9 @@ export default {
 /* Birth date: masked typing input + calendar icon. The picker is collapsed to
    1px (invisible) so it is NOT a second field; the icon opens its popup. */
 .date-wrap { position: relative; }
-.date-wrap .date-hidden {
-  position: absolute; right: 0; bottom: 0;
-  width: 1px; height: 1px; opacity: 0; overflow: hidden; pointer-events: none;
-}
+/* Parent clips the picker completely (height:0 + overflow:hidden), so Element's
+   own width on the picker can't make it show. Popup is teleported to body. */
+.cal-host { position: absolute; left: 0; top: 100%; width: 100%; height: 0; overflow: hidden; }
 .cal-btn { display: inline-flex; align-items: center; color: #64748b; cursor: pointer; }
 .cal-btn:hover { color: #1d4ed8; }
 
