@@ -1,0 +1,28 @@
+require("dotenv").config()
+module.exports = {
+      PORT:process.env.PORT,
+      DATABASE_URL:process.env.DATABASE_URL,
+      IMAGE_ADDRESS:process.env.IMAGE_ADDRESS,
+      HASHNUMBER:process.env.HASHNUMBER,
+      TOKEN_KEY:process.env.TOKEN_KEY,
+      QRCODE_ADDRESS:process.env.QRCODE_ADDRESS,
+      ONE_ID_CLIENT_ID:process.env.ONE_ID_CLIENT_ID,
+      ONE_ID_CLIENT_SECRET:process.env.ONE_ID_CLIENT_SECRET,
+      ONE_ID_OAUTH_URL:process.env.ONE_ID_OAUTH_URL,
+      REDIRECT_URI:process.env.REDIRECT_URI,
+      ONE_ID_SCOPE:process.env.ONE_ID_SCOPE,
+      DB_PORT:process.env.DB_PORT,
+      DB_NAME:process.env.DB_NAME,
+      DB_USER:process.env.DB_USER,
+      DB_PASSWORD:process.env.DB_PASSWORD,
+      BADGEDURATIONYEAR:process.env.BADGEDURATIONYEAR,
+      NAMEOFISSUER:process.env.NAMEOFISSUER,
+      SENDER_USER:process.env.SENDER_USER,
+      APP_PASSWORD:process.env.APP_PASSWORD,
+      MB_CLIENT_ID:process.env.MB_CLIENT_ID,
+      MB_CLIENT_SECRET:process.env.MB_CLIENT_SECRET,
+      MB_USERNAME:process.env.MB_USERNAME,
+      MB_PASSWORD:process.env.MB_PASSWORD,
+      MB_URL:process.env.MB_URL,
+      MB_URL_PASSPORT:process.env.MB_URL_PASSPORT
+}

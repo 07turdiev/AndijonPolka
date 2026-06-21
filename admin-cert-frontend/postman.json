@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "XXXXXXXXX",
+		"name": "XXXXXXXXX",
+		"schema": "XXXXXXXXXX",
+		"_exporter_id": "XXXXXXXX",
+		"_collection_link": "XXXXXXXXXXX"
+	},
+	"item": [
+		{
+			"name": "get certificated users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_ichlinks}}/api/site/volunteers",
+					"host": [
+						"{{base_url_ichlinks}}"
+					],
+					"path": [
+						"api",
+						"site",
+						"volunteers"
+					],
+					"query": [
+						{
+							"key": "searchWord",
+							"value": "Dost",
+							"disabled": true
+						},
+						{
+							"key": "member_type",
+							"value": "translator",
+							"description": "translator,technology,culture",
+							"disabled": true
+						},
+						{
+							"key": "lang_id",
+							"value": "45",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "5",
+							"disabled": true
+						},
+						{
+							"key": "offset",
+							"value": "5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get certificated users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_ichlinks}}/api/site/volunteers",
+							"host": [
+								"{{base_url_ichlinks}}"
+							],
+							"path": [
+								"api",
+								"site",
+								"volunteers"
+							],
+							"query": [
+								{
+									"key": "searchWord",
+									"value": "Dost",
+									"disabled": true
+								},
+								{
+									"key": "member_type",
+									"value": "translator",
+									"description": "translator,technology,culture",
+									"disabled": true
+								},
+								{
+									"key": "lang_id",
+									"value": "45",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "offset",
+									"value": "5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Mar 2025 17:08:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "801"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"321-X1Elz9tSmBX0DPjx73iAWET84QM\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"error\": null,\n    \"result\": [\n        {\n            \"phone_number\": \"+998901234567\",\n            \"first_name\": \"John\",\n            \"sur_name\": \"Doe\",\n            \"mid_name\": \"Middle\",\n            \"birth_place\": \"Tashkent\",\n            \"birth_date\": \"1990-01-01\",\n            \"ctzn\": \"Uzbekistan\",\n            \"per_adr\": \"Some Address\",\n            \"pport_issue_place\": \"Tashkent\",\n            \"pport_issue_date\": \"2010-05-10\",\n            \"pport_expr_date\": \"2030-05-10\",\n            \"gd\": \"M\",\n            \"email\": \"john.doe@example.com\",\n            \"app_status\": \"checking\",\n            \"role\": \"user\",\n            \"status\": \"active\",\n            \"user_id\": 1,\n            \"lastSeen\": null,\n            \"certificates\": [\n                {\n                    \"first_name\": \"Abduhamid\",\n                    \"sur_name\": \"Botirov\",\n                    \"middle_name\": \"Komiljon o'gli\",\n                    \"pin\": \"50801056440025\",\n                    \"given_date\": \"2025-03-23T13:39:41.519Z\",\n                    \"expr_date\": \"2027-03-23T13:39:41.519Z\",\n                    \"category\": \"akt\",\n                    \"status\": \"active\",\n                    \"reg_num\": null,\n                    \"certificate_id\": 1,\n                    \"createdAt\": \"2025-03-23T13:39:41.520Z\",\n                    \"updatedAt\": \"2025-03-23T13:39:41.520Z\",\n                    \"user_id\": 1\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get applications admin",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI0NzYxMzQsImV4cCI6MTc0MjUxMjEzNH0.lbEp2WRorHCsM8kdOaGaoR1IAQ1wXWfSBSRpguZZ3PE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_ichlinks}}/api/admin/applications?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MjMzMzAsImV4cCI6MTc0Mjc1OTMzMH0.Kf2a_tWSy3fVjO6CIE-Ff20bA-vhyo23B_-wWs3RgxE",
+					"host": [
+						"{{base_url_ichlinks}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"applications"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MjMzMzAsImV4cCI6MTc0Mjc1OTMzMH0.Kf2a_tWSy3fVjO6CIE-Ff20bA-vhyo23B_-wWs3RgxE"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get applications admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI0NzYxMzQsImV4cCI6MTc0MjUxMjEzNH0.lbEp2WRorHCsM8kdOaGaoR1IAQ1wXWfSBSRpguZZ3PE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_ichlinks}}/api/admin/applications?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MjMzMzAsImV4cCI6MTc0Mjc1OTMzMH0.Kf2a_tWSy3fVjO6CIE-Ff20bA-vhyo23B_-wWs3RgxE",
+							"host": [
+								"{{base_url_ichlinks}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"applications"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MjMzMzAsImV4cCI6MTc0Mjc1OTMzMH0.Kf2a_tWSy3fVjO6CIE-Ff20bA-vhyo23B_-wWs3RgxE"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Mar 2025 17:09:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "587"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"24b-SX6Uu7/OYmkrKe7IXromGzxzeRw\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"error\": null,\n    \"result\": {\n        \"rows\": [\n            {\n                \"first_name\": \"Abduhamid\",\n                \"sur_name\": \"Botirov\",\n                \"middle_name\": \"Komiljon o'gli\",\n                \"tin\": null,\n                \"gd\": \"M\",\n                \"phone_number\": \"+998978917369\",\n                \"application_type\": \"certificate\",\n                \"badge_img\": \"public/1742724611619_16913_photo_2023-09-25_15-11-44.png\",\n                \"application_id\": 4,\n                \"application_number\": \"19260\",\n                \"status\": \"new\",\n                \"createdAt\": \"2025-03-23T10:10:11.634Z\",\n                \"updatedAt\": \"2025-03-23T10:10:11.638Z\",\n                \"user_id\": 1,\n                \"region_id\": null\n            }\n        ],\n        \"count\": 1,\n        \"totalNumberApplications\": 1,\n        \"newApplications\": 1,\n        \"finishedApplications\": 0,\n        \"acceptedApplications\": 0,\n        \"cancelledApplications\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "change application status admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"accepted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_ichlinks}}/api/admin/applications/1?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI0NzYxMzQsImV4cCI6MTc0MjUxMjEzNH0.lbEp2WRorHCsM8kdOaGaoR1IAQ1wXWfSBSRpguZZ3PE",
+					"host": [
+						"{{base_url_ichlinks}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"applications",
+						"1"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI0NzYxMzQsImV4cCI6MTc0MjUxMjEzNH0.lbEp2WRorHCsM8kdOaGaoR1IAQ1wXWfSBSRpguZZ3PE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create certificate",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\":\"done\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_ichlinks}}/api/admin/applications/certificate/4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MzQ3NTYsImV4cCI6MTc0Mjc3MDc1Nn0.j6sKF54k5ga7a-PpZhPrEPWh02H-WPgQPmrZYxD0Vx8",
+					"host": [
+						"{{base_url_ichlinks}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"applications",
+						"certificate",
+						"4"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MzQ3NTYsImV4cCI6MTc0Mjc3MDc1Nn0.j6sKF54k5ga7a-PpZhPrEPWh02H-WPgQPmrZYxD0Vx8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create certificate",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_ichlinks}}/api/admin/applications/certificate/4?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MzQ3NTYsImV4cCI6MTc0Mjc3MDc1Nn0.j6sKF54k5ga7a-PpZhPrEPWh02H-WPgQPmrZYxD0Vx8",
+							"host": [
+								"{{base_url_ichlinks}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"applications",
+								"certificate",
+								"4"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3MzQ3NTYsImV4cCI6MTc0Mjc3MDc1Nn0.j6sKF54k5ga7a-PpZhPrEPWh02H-WPgQPmrZYxD0Vx8"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Mar 2025 17:11:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "382"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17e-w74y5rTbfGxvm/IbP0Vd9ER6Xo8\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": null,\n    \"result\": {\n        \"category\": \"akt\",\n        \"status\": \"active\",\n        \"certificate_id\": 2,\n        \"first_name\": \"Abduhamid\",\n        \"sur_name\": \"Botirov\",\n        \"middle_name\": \"Komiljon o'gli\",\n        \"pin\": \"50801056440025\",\n        \"given_date\": \"2025-03-23T17:11:00.489Z\",\n        \"expr_date\": \"2027-03-23T17:11:00.489Z\",\n        \"updatedAt\": \"2025-03-23T17:11:00.490Z\",\n        \"createdAt\": \"2025-03-23T17:11:00.490Z\",\n        \"reg_num\": null,\n        \"user_id\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "login admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\":\"info@culturevolunteers.uz\",\r\n    \"password\":\"1Qazxsw2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url_ichlinks}}/api/admin/login",
+					"host": [
+						"{{base_url_ichlinks}}"
+					],
+					"path": [
+						"api",
+						"admin",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login admin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\":\"info@culturevolunteers.uz\",\r\n    \"password\":\"1Qazxsw2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url_ichlinks}}/api/admin/login",
+							"host": [
+								"{{base_url_ichlinks}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Mar 2025 17:09:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d3-1aZcmHETWXNTBZuKyxnciEvQQ/Q\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"error\": null,\n    \"result\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoxLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE3NDI3NDk3ODUsImV4cCI6MTc0Mjc4NTc4NX0.uRZsAGV_gUDqBoYL-yt_TPmJfO39-iSwgUjij9CSPLg\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

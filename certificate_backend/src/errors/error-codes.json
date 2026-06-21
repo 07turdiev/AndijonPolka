@@ -1,0 +1,71 @@
+{
+    "codes":[
+        {
+            "code_number":"103",
+            "message":"one time code is not exist in One id authorization"
+        },
+        {
+            "code_number":"104",
+            "message":"problem occured while geting access token"
+        },
+        {
+            "code_number":"105",
+            "message":"problem occured while getting user data through access token"
+        },
+        {
+            "code_number":"106",
+            "message":"file type error, file must be jpeg,jpg,png or pdf"
+        },
+        {
+            "code_number":"107",
+            "message":"Unexpected error while authorizing user"
+        },
+        {
+            "code_number":"108",
+            "message":"Unexpected error handled in catch"
+        },{
+            "code_number":"109",
+            "message":"A token is missed or something went wrong with token"
+        },
+        {
+            "code_number":"110",
+            "message":"application_type is missed or wrong one is received"
+        },
+        {
+            "code_number":"111",
+            "message":"Unexpected error in express error handler"
+        },
+        {
+            "code_number":"112",
+            "message":"file size is exceeded in multer"
+        },
+        {
+            "code_number":"113",
+            "message":"Validation error in joi"
+        },
+        {
+            "code_number":"114",
+            "message":"You are not allowed to this api or you are deactivated by admin"
+        },
+        {
+            "code_number":"115",
+            "message":"The problem occured while generating id"
+        },
+        {
+            "code_number":"116",
+            "message":"method is required or wrong method is received"
+        },
+        {
+            "code_number":"404",
+            "message":"Not found"
+        },
+        {
+            "code_number":"117",
+            "message":"You can not post application until your certificate expired"
+        },
+        {
+            "code_number":"118",
+            "message":"You can't do this method because your things do not fit to this method"
+        }
+    ]
+}
