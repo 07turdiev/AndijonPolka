@@ -1,8 +1,11 @@
 import { createStore } from 'vuex'
 import axios from 'axios'
 
-// Backend base (no trailing slash). Configure via VUE_APP_API_URL.
-const baseUrl = process.env.VUE_APP_API_URL || 'http://localhost:5000'
+// Backend base (no trailing slash). In production the admin is served behind
+// nginx on the same origin, so the API is reached via a relative path ('' =>
+// "/api/admin/...", nginx proxies it). For local dev, .env sets
+// VUE_APP_API_URL=http://localhost:5000
+const baseUrl = process.env.VUE_APP_API_URL || ''
 
 const setupAxiosInterceptors = (store) => {
   axios.interceptors.response.use(
