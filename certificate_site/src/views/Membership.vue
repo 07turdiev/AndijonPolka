@@ -20,6 +20,7 @@ export default {
       series: '',
       number: '',
       birth_date: '',
+      dateDisplay: '',
       person: null,
       isMinor: false,
       alreadyRegistered: false,
@@ -79,33 +80,26 @@ export default {
     onNumberInput(v) {
       this.number = (v || '').replace(/\D/g, '').slice(0, 9)
     },
-    // Format raw input into DD.MM.YYYY (auto-insert dots)
-    formatDateStr(value) {
-      const d = (value || '').replace(/\D/g, '').slice(0, 8)
-      if (d.length >= 5) return d.slice(0, 2) + '.' + d.slice(2, 4) + '.' + d.slice(4)
-      if (d.length >= 3) return d.slice(0, 2) + '.' + d.slice(2)
-      return d
+    // Birth date typing -> auto-insert dots (DD.MM.YYYY)
+    onDateInput(v) {
+      const d = (v || '').replace(/\D/g, '').slice(0, 8)
+      let out = d
+      if (d.length >= 5) out = d.slice(0, 2) + '.' + d.slice(2, 4) + '.' + d.slice(4)
+      else if (d.length >= 3) out = d.slice(0, 2) + '.' + d.slice(2)
+      this.dateDisplay = out
+      this.birth_date = d.length === 8 ? `${d.slice(4)}-${d.slice(2, 4)}-${d.slice(0, 2)}` : ''
     },
-    // Add auto-dot masking to the date picker's own input so typing AND the
-    // calendar both work in a single field.
-    attachMask() {
-      const root = this.$refs.dateRef && this.$refs.dateRef.$el
-      if (!root) return
-      const input = root.querySelector('input')
-      if (!input || input._masked) return
-      input._masked = true
-      input.addEventListener('input', () => {
-        if (this._fmt) return
-        const f = this.formatDateStr(input.value)
-        if (f !== input.value) {
-          this._fmt = true
-          input.value = f
-          try { input.setSelectionRange(f.length, f.length) } catch (e) { /* ignore */ }
-          // re-dispatch so el-date-picker reads the formatted value
-          input.dispatchEvent(new Event('input', { bubbles: true }))
-          this._fmt = false
-        }
-      })
+    // Calendar icon -> open the (visually hidden) date picker panel
+    openCalendar() {
+      const p = this.$refs.dateRef
+      if (p && p.focus) p.focus()
+    },
+    // Calendar selection -> fill the masked input
+    onPickerChange(val) {
+      if (!val) return
+      const [y, m, d] = val.split('-')
+      this.dateDisplay = `${d}.${m}.${y}`
+      this.birth_date = val
     },
     validDate() {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(this.birth_date)) return false
@@ -119,7 +113,6 @@ export default {
       let digits = (v || '').replace(/\D/g, '')
       if (digits.startsWith('998')) digits = digits.slice(3)
       digits = digits.slice(0, 9)
-      // Backspaced a separator (text got shorter but digit count unchanged) -> drop a digit
       if (this.prevPhone.text && (v || '').length < this.prevPhone.text.length && digits.length === this.prevPhone.digits) {
         digits = digits.slice(0, -1)
       }
@@ -300,9 +293,21 @@ export default {
 
           <div class="f">
             <label>{{ $t('m_birthDate') }} <span>*</span></label>
-            <el-date-picker ref="dateRef" v-model="birth_date" type="date"
-              format="DD.MM.YYYY" value-format="YYYY-MM-DD" :placeholder="$t('m_birthPh')"
-              size="large" style="width:100%" :disabled-date="(d) => d > new Date()" />
+            <div class="date-wrap">
+              <el-input :model-value="dateDisplay" @update:model-value="onDateInput"
+                :placeholder="$t('m_birthPh')" size="large" maxlength="10" inputmode="numeric" @keyup.enter="onSearch">
+                <template #suffix>
+                  <span class="cal-btn" @click.stop="openCalendar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" />
+                      <line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" />
+                    </svg>
+                  </span>
+                </template>
+              </el-input>
+              <el-date-picker ref="dateRef" v-model="birth_date" type="date" value-format="YYYY-MM-DD"
+                :disabled-date="(d) => d > new Date()" class="date-hidden" @change="onPickerChange" />
+            </div>
           </div>
 
           <div class="f f-btn">
@@ -396,9 +401,13 @@ export default {
 .f label, .ro label { font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 6px; }
 .f label span, .ro label span { color: #ef4444; }
 
-/* Birth date: masked typing input + calendar icon (opens localized picker) */
+/* Birth date: masked typing input + calendar icon. The picker is collapsed to
+   1px (invisible) so it is NOT a second field; the icon opens its popup. */
 .date-wrap { position: relative; }
-.date-wrap .date-overlay { position: absolute; left: 0; bottom: 0; width: 100%; opacity: 0; pointer-events: none; }
+.date-wrap .date-hidden {
+  position: absolute; right: 0; bottom: 0;
+  width: 1px; height: 1px; opacity: 0; overflow: hidden; pointer-events: none;
+}
 .cal-btn { display: inline-flex; align-items: center; color: #64748b; cursor: pointer; }
 .cal-btn:hover { color: #1d4ed8; }
 
