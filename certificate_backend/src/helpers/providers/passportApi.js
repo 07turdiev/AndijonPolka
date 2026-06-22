@@ -1,22 +1,9 @@
 const axios = require("axios")
 const config = require("../../modules/config")
-const { mockPerson } = require("../passportShared")
+const { mockPerson, authHeader } = require("../passportShared")
 
 // documentTypeId for the "Passport (PINFL)" type — searched by PINFL, not series+number
 const PINFL_DOC_TYPE = 7
-
-// Build the Authorization header: prefer the full PASSPORT_API_AUTH value,
-// otherwise construct "Basic base64(login:password)" from login + password.
-function authHeader() {
-    if (config.PASSPORT_API_AUTH) return config.PASSPORT_API_AUTH
-    if (config.PASSPORT_API_LOGIN && config.PASSPORT_API_PASSWORD) {
-        const token = Buffer
-            .from(`${config.PASSPORT_API_LOGIN}:${config.PASSPORT_API_PASSWORD}`)
-            .toString("base64")
-        return `Basic ${token}`
-    }
-    return null
-}
 
 // "DD.MM.YYYY" or ISO "YYYY-MM-DD[THH:mm:ss]" -> "YYYY-MM-DD"
 function toIso(d) {

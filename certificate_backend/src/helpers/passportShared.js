@@ -1,4 +1,18 @@
 // Shared helpers for both passport providers (adult / minor).
+const config = require("../modules/config")
+
+// Build the Authorization header for the itg.madaniyat.uz MV endpoints:
+// prefer the full PASSPORT_API_AUTH value, otherwise "Basic base64(login:password)".
+function authHeader() {
+    if (config.PASSPORT_API_AUTH) return config.PASSPORT_API_AUTH
+    if (config.PASSPORT_API_LOGIN && config.PASSPORT_API_PASSWORD) {
+        const token = Buffer
+            .from(`${config.PASSPORT_API_LOGIN}:${config.PASSPORT_API_PASSWORD}`)
+            .toString("base64")
+        return `Basic ${token}`
+    }
+    return null
+}
 
 // 1x1 transparent PNG (placeholder photo for mock mode)
 const MOCK_PHOTO =
@@ -72,4 +86,4 @@ function mockPerson({ pinfl, document, birth_date, minor, documentTypeId }) {
     return { found: true, code: "1", person, message: "MOCK" }
 }
 
-module.exports = { normalize, mockPerson, MOCK_PHOTO, mapSex }
+module.exports = { normalize, mockPerson, MOCK_PHOTO, mapSex, authHeader }

@@ -21,6 +21,7 @@ export default {
       number: '',
       birth_date: '',
       dateDisplay: '',
+      birthCertSeriesList: BIRTH_CERT_SERIES,
       person: null,
       isMinor: false,
       uploadedPhoto: '',
@@ -49,7 +50,7 @@ export default {
     },
     isPinfl() { return this.documentTypeId === 7 },
     isBirthCert() { return this.documentTypeId === 2 },
-    birthCertSeries() { return BIRTH_CERT_SERIES },
+    birthCertSeries() { return this.birthCertSeriesList },
     photoSrc() {
       if (!this.person || !this.person.photo) return ''
       return 'data:image/jpeg;base64,' + this.person.photo
@@ -143,6 +144,13 @@ export default {
       this.phoneDisplay = out
       this.phone_number = digits.length ? '+998' + digits : ''
       this.prevPhone = { text: out, digits: digits.length }
+    },
+    async loadBirthCertSeries() {
+      try {
+        const res = await this.$axios.get('/birth-cert-series')
+        const list = res && res.data && res.data.result && res.data.result.series
+        if (Array.isArray(list) && list.length) this.birthCertSeriesList = list
+      } catch (e) { /* keep fallback list */ }
     },
     async loadRegions() {
       try {
@@ -254,6 +262,7 @@ export default {
     }
   },
   mounted() {
+    this.loadBirthCertSeries()
     this.loadRegions()
     this.loadDistricts(ANDIJON_REGION_ID)
   }

@@ -21,6 +21,9 @@ module.exports = {
 
       PASSPORT_API_URL: process.env.PASSPORT_API_URL ||
             "https://itg.madaniyat.uz/api/web/MV/PersonGetByPassportData",
+      // Birth-certificate series select-list (public GET, no auth required)
+      PASSPORT_SERIES_URL: process.env.PASSPORT_SERIES_URL ||
+            "https://itg.madaniyat.uz/api/web/MV/IdentityDocSeriesSelectList",
       // EITHER provide login + password (Basic header is built automatically) ...
       PASSPORT_API_LOGIN: process.env.PASSPORT_API_LOGIN,
       PASSPORT_API_PASSWORD: process.env.PASSPORT_API_PASSWORD,
