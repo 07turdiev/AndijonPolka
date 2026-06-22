@@ -52,6 +52,8 @@ const en = {
   m_warnPinfl: 'PINFL must be 14 digits',
   m_warnDate: 'Select or enter the date of birth',
   m_warnDoc: 'Enter the document series and number',
+  m_warnRegion: 'Select a region',
+  m_warnDistrict: 'Select a district',
   m_notFound: 'No data found',
   m_notFoundCheck: 'No data found. Check the entered data',
   m_already: 'This user is already registered',

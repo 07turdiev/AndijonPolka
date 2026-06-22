@@ -97,6 +97,8 @@ module.exports.registerParticipant = async (req, res) => {
 
         const region_id = req.body.region_id ? Number(req.body.region_id) : null
         const district_id = req.body.district_id ? Number(req.body.district_id) : null
+        if (!region_id) return reply(res, 400, false, "Viloyatni tanlang", null)
+        if (!district_id) return reply(res, 400, false, "Tumanni tanlang", null)
         const phone_number = (req.body.phone_number || "").toString().trim() || null
 
         const photoPath = savePhoto(photoBase64, person.pinfl)

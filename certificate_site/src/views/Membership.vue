@@ -211,6 +211,8 @@ export default {
     async onSave() {
       if (!this.person) { ElMessage.warning(this.$t('m_searchFirst')); return }
       if (this.alreadyRegistered) { ElMessage.warning(this.$t('m_already')); return }
+      if (!this.region_id) { ElMessage.warning(this.$t('m_warnRegion')); return }
+      if (!this.district_id) { ElMessage.warning(this.$t('m_warnDistrict')); return }
       this.submitting = true
       try {
         const payload = {
@@ -374,13 +376,13 @@ export default {
 
             <div class="grid">
               <div class="ro">
-                <label>{{ $t('m_region') }}</label>
+                <label>{{ $t('m_region') }} <span>*</span></label>
                 <el-select v-model="region_id" :placeholder="$t('m_select')" size="large" style="width:100%" filterable @change="onRegionChange">
                   <el-option v-for="r in regions" :key="r.region_id" :label="r.name_uz" :value="r.region_id" />
                 </el-select>
               </div>
               <div class="ro">
-                <label>{{ $t('m_district') }}</label>
+                <label>{{ $t('m_district') }} <span>*</span></label>
                 <el-select v-model="district_id" :placeholder="$t('m_select')" size="large" style="width:100%" clearable filterable :disabled="!region_id">
                   <el-option v-for="d in districts" :key="d.district_id" :label="d.name_uz" :value="d.district_id" />
                 </el-select>

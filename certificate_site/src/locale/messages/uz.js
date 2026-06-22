@@ -52,6 +52,8 @@ const uz = {
   m_warnPinfl: "JSHSHIR 14 ta raqamdan iborat bo'lishi kerak",
   m_warnDate: "Tug'ilgan sanani tanlang yoki kiriting",
   m_warnDoc: "Hujjat seriyasi va raqamini kiriting",
+  m_warnRegion: "Viloyatni tanlang",
+  m_warnDistrict: "Tumanni tanlang",
   m_notFound: "Ma'lumot topilmadi",
   m_notFoundCheck: "Ma'lumot topilmadi. Ma'lumotlarni tekshiring",
   m_already: "Bu foydalanuvchi allaqachon a'zo bo'lgan",
