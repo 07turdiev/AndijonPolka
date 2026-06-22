@@ -54,7 +54,7 @@ const uz = {
   m_warnDoc: "Hujjat seriyasi va raqamini kiriting",
   m_notFound: "Ma'lumot topilmadi",
   m_notFoundCheck: "Ma'lumot topilmadi. Ma'lumotlarni tekshiring",
-  m_already: "Bu inson allaqachon a'zo bo'lgan",
+  m_already: "Bu foydalanuvchi allaqachon a'zo bo'lgan",
   m_regErr: "A'zo bo'lishda xatolik",
   m_searchFirst: "Avval qidiruvni bajaring",
   h_lead: "Andijon polkasi raqsida 20 ming kishi ishtirokida Ginnes rekordini o'rnatamiz. Ishtirokchilar ro'yxatini shakllantirish uchun a'zo bo'ling.",

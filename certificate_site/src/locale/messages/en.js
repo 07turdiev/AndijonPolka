@@ -54,7 +54,7 @@ const en = {
   m_warnDoc: 'Enter the document series and number',
   m_notFound: 'No data found',
   m_notFoundCheck: 'No data found. Check the entered data',
-  m_already: 'This person is already registered',
+  m_already: 'This user is already registered',
   m_regErr: 'Registration error',
   m_searchFirst: 'Perform a search first',
   h_lead: 'We will set a Guinness World Record with 20,000 people dancing the Andijan Polka. Join to be on the list.',
