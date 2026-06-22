@@ -361,8 +361,8 @@ export default {
               <div class="ro"><label>{{ $t('m_middleName') }}</label><div class="val">{{ person.middle_name }}</div></div>
               <div class="ro"><label>{{ $t('m_birthDate') }}</label><div class="val">{{ person.birth_date }}</div></div>
               <div class="ro"><label>{{ $t('m_gender') }}</label><div class="val">{{ genderLabel }}</div></div>
-              <div class="ro"><label>{{ $t('m_nationality') }}</label><div class="val">{{ person.nationality }}</div></div>
-              <div class="ro"><label>{{ $t('m_citizenship') }}</label><div class="val">{{ person.citizenship }}</div></div>
+              <div v-if="person.nationality" class="ro"><label>{{ $t('m_nationality') }}</label><div class="val">{{ person.nationality }}</div></div>
+              <div v-if="person.citizenship" class="ro"><label>{{ $t('m_citizenship') }}</label><div class="val">{{ person.citizenship }}</div></div>
               <div class="ro"><label>{{ $t('m_pinfl') }}</label><div class="val">{{ person.pinfl }}</div></div>
               <div class="ro">
                 <label>{{ $t('m_document') }}</label>

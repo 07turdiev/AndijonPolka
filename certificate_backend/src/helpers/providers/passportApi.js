@@ -1,6 +1,7 @@
 const axios = require("axios")
 const config = require("../../modules/config")
 const { mockPerson, authHeader } = require("../passportShared")
+const { cyrlToLatin } = require("../translit")
 
 // documentTypeId for the "Passport (PINFL)" type — searched by PINFL, not series+number
 const PINFL_DOC_TYPE = 7
@@ -18,15 +19,17 @@ function toIso(d) {
 // Map the itg.madaniyat.uz response object into our participant shape
 function mapPerson(d) {
     const middle = d.middleName && d.middleName !== "XXX" ? d.middleName : ""
+    // Guvohnoma ma'lumotlari krillcha keladi — bazaga lotinchada yoziladi.
+    // (Lotincha kelgan ma'lumot cyrlToLatin'dan o'zgarmay o'tadi.)
     return {
         pinfl: d.pinfl || null,
-        last_name: d.lastName || "",
-        first_name: d.firstName || "",
-        middle_name: middle,
+        last_name: cyrlToLatin(d.lastName || ""),
+        first_name: cyrlToLatin(d.firstName || ""),
+        middle_name: cyrlToLatin(middle),
         birth_date: toIso(d.birthOn),
-        birth_place: d.birthPlace || null,
-        nationality: d.nationality || null,
-        citizenship: d.citizenship || null,
+        birth_place: cyrlToLatin(d.birthPlace || null),
+        nationality: cyrlToLatin(d.nationality || null),
+        citizenship: cyrlToLatin(d.citizenship || null),
         gender: Number(d.genderId) === 1 ? "M" : "F",
         document: [d.docSeria, d.docNumber].filter(Boolean).join(""),
         document_type: d.documentTypeId != null ? String(d.documentTypeId) : null,
