@@ -23,6 +23,7 @@ export default {
       dateDisplay: '',
       person: null,
       isMinor: false,
+      uploadedPhoto: '',
       alreadyRegistered: false,
       regions: [],
       districts: [],
@@ -53,6 +54,10 @@ export default {
       if (!this.person || !this.person.photo) return ''
       return 'data:image/jpeg;base64,' + this.person.photo
     },
+    // 18 yoshgacha uchun API'dan rasm kelmaydi — qo'lda yuklash imkoni beriladi (ixtiyoriy)
+    needsPhotoUpload() { return this.isMinor && !this.photoSrc },
+    // Ko'rsatiladigan rasm: API rasmi yoki qo'lda yuklangan rasm
+    displayPhoto() { return this.photoSrc || this.uploadedPhoto },
     fullName() {
       if (!this.person) return ''
       return [this.person.last_name, this.person.first_name, this.person.middle_name]
@@ -69,7 +74,18 @@ export default {
       this.series = ''
       this.number = ''
       this.person = null
+      this.uploadedPhoto = ''
       this.alreadyRegistered = false
+    },
+    // Qo'lda rasm tanlash (18 yoshgacha — guvohnoma uchun). Faylni base64'ga o'giradi.
+    onPhotoChange(file) {
+      const raw = (file && file.raw) || file
+      if (!raw) return
+      if (!/^image\//.test(raw.type || '')) { ElMessage.warning(this.$t('m_photoType')); return }
+      if (raw.size > 5 * 1024 * 1024) { ElMessage.warning(this.$t('m_photoSize')); return }
+      const reader = new FileReader()
+      reader.onload = (e) => { this.uploadedPhoto = e.target.result }
+      reader.readAsDataURL(raw)
     },
     onPinflInput(v) {
       this.pinfl = (v || '').replace(/\D/g, '').slice(0, 14)
@@ -171,6 +187,7 @@ export default {
         if (res && res.data && res.data.success && r && r.person) {
           this.person = r.person
           this.isMinor = r.is_minor
+          this.uploadedPhoto = ''
           this.alreadyRegistered = !!r.already_registered
           if (this.alreadyRegistered) ElMessage.warning(this.$t('m_already'))
         } else {
@@ -192,7 +209,8 @@ export default {
           ...this.identityPayload(),
           phone_number: this.phone_number || null,
           region_id: this.region_id || null,
-          district_id: this.district_id || null
+          district_id: this.district_id || null,
+          photo: this.uploadedPhoto || null
         }
         const res = await this.$axios.post('/register', payload)
         if (res && res.data && res.data.success) {
@@ -223,6 +241,7 @@ export default {
       this.dateDisplay = ''
       this.person = null
       this.isMinor = false
+      this.uploadedPhoto = ''
       this.alreadyRegistered = false
       this.region_id = ANDIJON_REGION_ID
       this.district_id = null
@@ -366,8 +385,14 @@ export default {
           </div>
 
           <div class="result-photo">
-            <img v-if="photoSrc" :src="photoSrc" alt="photo" />
-            <div v-else class="no-photo">Foto</div>
+            <img v-if="displayPhoto" :src="displayPhoto" alt="photo" />
+            <div v-else class="no-photo">{{ $t('m_photo') }}</div>
+            <div v-if="needsPhotoUpload" class="photo-upload">
+              <el-upload :auto-upload="false" :show-file-list="false" accept="image/*" :on-change="onPhotoChange">
+                <el-button size="small">{{ uploadedPhoto ? $t('m_photoChange') : $t('m_photoSelect') }}</el-button>
+              </el-upload>
+              <p class="photo-hint">{{ $t('m_photoHint') }}</p>
+            </div>
           </div>
         </div>
 
@@ -428,6 +453,10 @@ export default {
 .result-photo { flex: 0 0 170px; }
 .result-photo img { width: 170px; height: 210px; object-fit: cover; border-radius: 10px; border: 1px solid #e2e8f0; }
 .no-photo { width: 170px; height: 210px; display: flex; align-items: center; justify-content: center; background: #f1f5f9; border: 1px dashed #cbd5e1; border-radius: 10px; color: #94a3b8; font-size: 13px; }
+.photo-upload { width: 170px; margin-top: 10px; text-align: center; }
+.photo-upload .el-button { width: 100%; }
+.photo-upload .req { color: #ef4444; margin-left: 2px; }
+.photo-hint { margin: 6px 0 0; font-size: 11px; color: #94a3b8; line-height: 1.4; }
 
 .save-row { display: flex; justify-content: flex-end; margin-top: 22px; padding-top: 18px; border-top: 1px solid #eef2f7; }
 .save-row .el-button { min-width: 200px; }
