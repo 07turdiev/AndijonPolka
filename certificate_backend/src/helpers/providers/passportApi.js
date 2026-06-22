@@ -2,6 +2,7 @@ const axios = require("axios")
 const config = require("../../modules/config")
 const { mockPerson, authHeader } = require("../passportShared")
 const { cyrlToLatin } = require("../translit")
+const { translateNationality, translateCountry } = require("../dictionary")
 
 // documentTypeId for the "Passport (PINFL)" type — searched by PINFL, not series+number
 const PINFL_DOC_TYPE = 7
@@ -28,8 +29,10 @@ function mapPerson(d) {
         middle_name: cyrlToLatin(middle),
         birth_date: toIso(d.birthOn),
         birth_place: cyrlToLatin(d.birthPlace || null),
-        nationality: cyrlToLatin(d.nationality || null),
-        citizenship: cyrlToLatin(d.citizenship || null),
+        // Millat va davlat nomlari ruscha keladi — lug'at orqali o'zbekchaga o'giriladi
+        nationality: translateNationality(d.nationality || null, d.nationalityId),
+        citizenship: translateCountry(d.citizenship || null, d.citizenshipId),
+        birth_country: translateCountry(d.birthCountry || null, d.birthCountryId),
         gender: Number(d.genderId) === 1 ? "M" : "F",
         document: [d.docSeria, d.docNumber].filter(Boolean).join(""),
         document_type: d.documentTypeId != null ? String(d.documentTypeId) : null,
