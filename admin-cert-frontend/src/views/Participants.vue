@@ -42,6 +42,21 @@
         <label>Sana (gacha)</label>
         <Calendar v-model="filters.end_date" dateFormat="dd.mm.yy" placeholder="kk.oo.yy" showIcon />
       </div>
+      <div class="filter-field">
+        <label>Yosh</label>
+        <Dropdown v-model="agePreset" :options="agePresets" optionLabel="label" optionValue="value"
+          placeholder="Barchasi" @change="onAgePresetChange" />
+      </div>
+      <div class="filter-field age">
+        <label>Yosh (dan)</label>
+        <InputNumber v-model="filters.min_age" :min="0" :max="120" :useGrouping="false" placeholder="0"
+          @input="onAgeManual" @keyup.enter="applyFilters" />
+      </div>
+      <div class="filter-field age">
+        <label>Yosh (gacha)</label>
+        <InputNumber v-model="filters.max_age" :min="0" :max="120" :useGrouping="false" placeholder="120"
+          @input="onAgeManual" @keyup.enter="applyFilters" />
+      </div>
       <div class="filter-actions">
         <Button label="Filtr" icon="pi pi-search" @click="applyFilters" />
         <Button label="Tozalash" icon="pi pi-times" class="p-button-secondary" @click="resetFilters" />
@@ -68,6 +83,9 @@
       </Column>
       <Column field="pinfl" header="JSHSHIR" />
       <Column field="birth_date" header="Tug‘ilgan sana" />
+      <Column header="Yosh" :style="{ width: '70px' }">
+        <template #body="slot">{{ ageOf(slot.data.birth_date) }}</template>
+      </Column>
       <Column header="Jinsi" :style="{ width: '80px' }">
         <template #body="slot">{{ slot.data.gender === 'M' ? 'Erkak' : (slot.data.gender === 'F' ? 'Ayol' : '') }}</template>
       </Column>
@@ -122,7 +140,14 @@ export default {
       loading: false,
       first: 0,
       limit: 20,
-      filters: { searchWord: '', region_id: null, district_id: null, start_date: null, end_date: null },
+      filters: { searchWord: '', region_id: null, district_id: null, start_date: null, end_date: null, min_age: null, max_age: null },
+      agePreset: null,
+      agePresets: [
+        { label: 'Barchasi', value: null },
+        { label: '18 yoshgacha', value: 'minor' },
+        { label: '18 va undan katta', value: 'adult' },
+        { label: 'Maxsus oraliq', value: 'custom' }
+      ],
       districts: [],
       exporting: false,
       deleteDialog: false,
@@ -158,8 +183,34 @@ export default {
         district_id: this.filters.district_id || undefined,
         start_date: this.fmtDateParam(this.filters.start_date) || undefined,
         end_date: this.fmtDateParam(this.filters.end_date) || undefined,
+        min_age: (this.filters.min_age !== null && this.filters.min_age !== '') ? this.filters.min_age : undefined,
+        max_age: (this.filters.max_age !== null && this.filters.max_age !== '') ? this.filters.max_age : undefined,
         ...extra
       }
+    },
+    // "YYYY-MM-DD" dan to'liq yosh
+    ageOf(s) {
+      if (!s) return ''
+      const d = new Date(s)
+      if (isNaN(d)) return ''
+      const now = new Date()
+      let a = now.getFullYear() - d.getFullYear()
+      const m = now.getMonth() - d.getMonth()
+      if (m < 0 || (m === 0 && now.getDate() < d.getDate())) a--
+      return a >= 0 ? a : ''
+    },
+    // Tezkor yosh presetlari -> min/max ni to'ldiradi
+    onAgePresetChange() {
+      const p = this.agePreset
+      if (p === 'minor') { this.filters.min_age = null; this.filters.max_age = 17 }
+      else if (p === 'adult') { this.filters.min_age = 18; this.filters.max_age = null }
+      else if (p === null) { this.filters.min_age = null; this.filters.max_age = null }
+      // 'custom' -> mavjud min/max qoladi
+      this.applyFilters()
+    },
+    // Min/max qo'lda o'zgartirilsa preset "Maxsus"ga o'tadi
+    onAgeManual() {
+      this.agePreset = 'custom'
     },
     async loadData() {
       this.loading = true
@@ -179,7 +230,8 @@ export default {
       this.$store.dispatch('fetchStats')
     },
     resetFilters() {
-      this.filters = { searchWord: '', region_id: null, district_id: null, start_date: null, end_date: null }
+      this.filters = { searchWord: '', region_id: null, district_id: null, start_date: null, end_date: null, min_age: null, max_age: null }
+      this.agePreset = null
       this.districts = []
       this.first = 0
       this.loadData()
@@ -242,9 +294,11 @@ export default {
 .filter-field.search { flex: 1 1 260px; min-width: 220px; }
 .filter-field:not(.search):not(.date) { flex: 0 1 190px; min-width: 160px; }
 .filter-field.date { flex: 0 1 170px; min-width: 150px; }
+.filter-field.age { flex: 0 1 110px; min-width: 90px; }
 /* Make all controls fill their field */
 .filter-field :deep(.p-inputtext),
 .filter-field :deep(.p-dropdown),
+.filter-field :deep(.p-inputnumber),
 .filter-field :deep(.p-calendar) { width: 100%; }
 .filter-actions { display: flex; gap: 8px; align-items: flex-end; margin-left: auto; }
 .filter-actions .p-button { white-space: nowrap; }

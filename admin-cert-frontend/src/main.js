@@ -11,6 +11,7 @@ import 'primeicons/primeicons.css'
 
 import Button from 'primevue/button'
 import InputText from 'primevue/inputtext'
+import InputNumber from 'primevue/inputnumber'
 import DataTable from 'primevue/datatable'
 import Column from 'primevue/column'
 import Dialog from 'primevue/dialog'
@@ -29,6 +30,7 @@ app.use(router)
 
 app.component('Button', Button)
 app.component('InputText', InputText)
+app.component('InputNumber', InputNumber)
 app.component('DataTable', DataTable)
 app.component('Column', Column)
 app.component('Dialog', Dialog)
