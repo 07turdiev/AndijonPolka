@@ -64,6 +64,11 @@
       </div>
     </div>
 
+    <!-- Filtered result count -->
+    <div class="result-count">
+      Topildi: <b>{{ totalRecords.toLocaleString('ru-RU') }}</b> nafar ishtirokchi
+    </div>
+
     <!-- Table -->
     <DataTable :value="rows" :loading="loading" lazy paginator :rows="limit" :totalRecords="totalRecords"
       :first="first" @page="onPage" dataKey="participant_id" stripedRows responsiveLayout="scroll" class="table">
@@ -306,6 +311,8 @@ export default {
   .filter-actions { margin-left: 0; width: 100%; }
   .filter-actions .p-button { flex: 1; }
 }
+.result-count { margin-bottom: 10px; color: #475569; font-size: 14px; }
+.result-count b { color: #1d4ed8; font-size: 16px; }
 .table { background: #fff; border-radius: 12px; overflow: hidden; }
 .thumb { width: 40px; height: 50px; object-fit: cover; border-radius: 4px; }
 .thumb.empty { display: flex; align-items: center; justify-content: center; background: #e5e7eb; color: #9ca3af; }
