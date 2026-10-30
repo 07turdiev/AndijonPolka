@@ -49,6 +49,8 @@ const uz = {
   m_doneTitle: "Tabriklaymiz!",
   m_doneText: "Siz Andijon Polkasi ishtirokchilari ro'yxatiga muvaffaqiyatli qo'shildingiz.",
   m_again: "Yana birovni a'zo qilish",
+  m_closedTitle: "Tanlov yopildi",
+  m_closedText: "Andijon Polkasi ishtirokchilarini ro'yxatga olish tugadi. Qatnashganingiz uchun rahmat!",
   m_warnPinfl: "JSHSHIR 14 ta raqamdan iborat bo'lishi kerak",
   m_warnDate: "Tug'ilgan sanani tanlang yoki kiriting",
   m_warnDoc: "Hujjat seriyasi va raqamini kiriting",

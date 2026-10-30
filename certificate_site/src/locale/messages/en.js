@@ -49,6 +49,8 @@ const en = {
   m_doneTitle: 'Congratulations!',
   m_doneText: 'You have been successfully added to the Andijan Polka participants list.',
   m_again: 'Register another',
+  m_closedTitle: 'Competition closed',
+  m_closedText: 'Registration for Andijan Polka participants has ended. Thank you for taking part!',
   m_warnPinfl: 'PINFL must be 14 digits',
   m_warnDate: 'Select or enter the date of birth',
   m_warnDoc: 'Enter the document series and number',

@@ -13,6 +13,10 @@ module.exports = {
       ADMIN_LOGIN: process.env.ADMIN_LOGIN || "admin",
       ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || "admin123",
 
+      // Tanlov yopilgan bo'lsa true — /search va /register 403 qaytaradi.
+      // Qayta ochish uchun .env da REGISTRATION_CLOSED=false qo'ying.
+      REGISTRATION_CLOSED: (process.env.REGISTRATION_CLOSED || "true") === "true",
+
       // Passport lookup — single API (itg.madaniyat.uz MV/PersonGetByPassportData).
       // Handles all document types (PINFL passport, ID card, birth certificate, passport).
       PASSPORT_MOCK: (process.env.PASSPORT_MOCK || "true") === "true",

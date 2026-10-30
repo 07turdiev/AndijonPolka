@@ -3,6 +3,9 @@ import { ElMessage } from 'element-plus'
 
 const ANDIJON_REGION_ID = 17
 
+// Ro'yxatga olish yakunlangan bo'lsa true (formani yashiradi, "Tanlov yakunlandi" ko'rsatadi)
+const REGISTRATION_CLOSED = true
+
 // Birth-certificate (Guvohnoma, documentTypeId 2) document series — chosen from a list
 const BIRTH_CERT_SERIES = [
   'I-AN', 'I-BH', 'I-FR', 'I-GZ', 'I-HR', 'I-NA', 'I-NV', 'I-QD', 'I-QQ', 'I-SM', 'I-SR', 'I-SU', 'I-TN', 'I-TV',
@@ -46,6 +49,7 @@ export default {
         { label: this.$t('m_docPassport'), value: 3 }
       ]
     },
+    registrationClosed() { return REGISTRATION_CLOSED },
     isPinfl() { return this.documentTypeId === 7 },
     isBirthCert() { return this.documentTypeId === 2 },
     birthCertSeries() { return BIRTH_CERT_SERIES },
@@ -172,7 +176,7 @@ export default {
           this.person = r.person
           this.isMinor = r.is_minor
           this.alreadyRegistered = !!r.already_registered
-          if (this.alreadyRegistered) ElMessage.warning(this.$t('m_already'))
+          if (this.alreadyRegistered) ElMessage.error(this.$t('m_already'))
         } else {
           ElMessage.error((res && res.data && res.data.error) || this.$t('m_notFound'))
         }
@@ -185,7 +189,7 @@ export default {
     },
     async onSave() {
       if (!this.person) { ElMessage.warning(this.$t('m_searchFirst')); return }
-      if (this.alreadyRegistered) { ElMessage.warning(this.$t('m_already')); return }
+      if (this.alreadyRegistered) { ElMessage.error(this.$t('m_already')); return }
       this.submitting = true
       try {
         const payload = {
@@ -206,7 +210,7 @@ export default {
         const msg = err && err.response && err.response.data && err.response.data.error
         if (status === 409) {
           this.alreadyRegistered = true
-          ElMessage.warning(msg || this.$t('m_already'))
+          ElMessage.error(msg || this.$t('m_already'))
         } else {
           ElMessage.error(msg || this.$t('m_regErr'))
         }
@@ -243,8 +247,15 @@ export default {
 
 <template>
   <div class="m-wrap">
+    <!-- REGISTRATION CLOSED -->
+    <div v-if="registrationClosed" class="done-card closed-card">
+      <div class="closed-icon">🏁</div>
+      <h2>{{ $t('m_closedTitle') }}</h2>
+      <p>{{ $t('m_closedText') }}</p>
+    </div>
+
     <!-- DONE -->
-    <div v-if="done" class="done-card">
+    <div v-else-if="done" class="done-card">
       <div class="check">✓</div>
       <h2>{{ $t('m_doneTitle') }}</h2>
       <p class="done-name">{{ doneName }}</p>
@@ -322,7 +333,7 @@ export default {
 
       <!-- Result panel (after search finds a person) -->
       <div v-if="person" class="panel result-panel">
-        <el-alert v-if="alreadyRegistered" type="warning" :closable="false" show-icon
+        <el-alert v-if="alreadyRegistered" type="error" :closable="false" show-icon
           :title="$t('m_already')" style="margin-bottom: 16px" />
 
         <div class="result">
@@ -437,6 +448,9 @@ export default {
 .done-card h2 { margin: 0 0 6px; color: #1e293b; }
 .done-name { font-weight: 700; font-size: 18px; margin: 4px 0 8px; }
 .done-card .el-button { margin-top: 16px; }
+.closed-card .closed-icon { font-size: 54px; line-height: 1; margin-bottom: 10px; }
+.closed-card h2 { color: #1e293b; }
+.closed-card p { color: #475569; font-size: 15px; }
 
 @media (max-width: 900px) {
   .grid { grid-template-columns: repeat(2, 1fr); }
