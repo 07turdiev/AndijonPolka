@@ -77,6 +77,14 @@ module.exports.registerParticipant = async (req, res) => {
             return reply(res, 404, false, notFoundMessage(code, message), null)
         }
 
+        // For minors (e.g. birth certificate) the passport API returns no photo —
+        // accept an optional client-uploaded image instead. Otherwise prefer the API photo.
+        const uploadedPhoto = (req.body.photo || "").toString().trim()
+        if (uploadedPhoto && !/^data:image\/\w+;base64,/.test(uploadedPhoto)) {
+            return reply(res, 400, false, "Rasm formati noto'g'ri", null)
+        }
+        const photoBase64 = person.photo || uploadedPhoto || null
+
         // Prevent duplicate registration
         const exists = await req.db.participants.findOne({
             where: { pinfl: person.pinfl }, raw: true
@@ -89,9 +97,11 @@ module.exports.registerParticipant = async (req, res) => {
 
         const region_id = req.body.region_id ? Number(req.body.region_id) : null
         const district_id = req.body.district_id ? Number(req.body.district_id) : null
+        if (!region_id) return reply(res, 400, false, "Viloyatni tanlang", null)
+        if (!district_id) return reply(res, 400, false, "Tumanni tanlang", null)
         const phone_number = (req.body.phone_number || "").toString().trim() || null
 
-        const photoPath = savePhoto(person.photo, person.pinfl)
+        const photoPath = savePhoto(photoBase64, person.pinfl)
 
         const created = await req.db.participants.create({
             pinfl: person.pinfl,

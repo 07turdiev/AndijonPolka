@@ -1,22 +1,11 @@
 const axios = require("axios")
 const config = require("../../modules/config")
-const { mockPerson } = require("../passportShared")
+const { mockPerson, authHeader } = require("../passportShared")
+const { cyrlToLatin } = require("../translit")
+const { translateNationality, translateCountry } = require("../dictionary")
 
 // documentTypeId for the "Passport (PINFL)" type — searched by PINFL, not series+number
 const PINFL_DOC_TYPE = 7
-
-// Build the Authorization header: prefer the full PASSPORT_API_AUTH value,
-// otherwise construct "Basic base64(login:password)" from login + password.
-function authHeader() {
-    if (config.PASSPORT_API_AUTH) return config.PASSPORT_API_AUTH
-    if (config.PASSPORT_API_LOGIN && config.PASSPORT_API_PASSWORD) {
-        const token = Buffer
-            .from(`${config.PASSPORT_API_LOGIN}:${config.PASSPORT_API_PASSWORD}`)
-            .toString("base64")
-        return `Basic ${token}`
-    }
-    return null
-}
 
 // "DD.MM.YYYY" or ISO "YYYY-MM-DD[THH:mm:ss]" -> "YYYY-MM-DD"
 function toIso(d) {
@@ -31,15 +20,19 @@ function toIso(d) {
 // Map the itg.madaniyat.uz response object into our participant shape
 function mapPerson(d) {
     const middle = d.middleName && d.middleName !== "XXX" ? d.middleName : ""
+    // Guvohnoma ma'lumotlari krillcha keladi — bazaga lotinchada yoziladi.
+    // (Lotincha kelgan ma'lumot cyrlToLatin'dan o'zgarmay o'tadi.)
     return {
         pinfl: d.pinfl || null,
-        last_name: d.lastName || "",
-        first_name: d.firstName || "",
-        middle_name: middle,
+        last_name: cyrlToLatin(d.lastName || ""),
+        first_name: cyrlToLatin(d.firstName || ""),
+        middle_name: cyrlToLatin(middle),
         birth_date: toIso(d.birthOn),
-        birth_place: d.birthPlace || null,
-        nationality: d.nationality || null,
-        citizenship: d.citizenship || null,
+        birth_place: cyrlToLatin(d.birthPlace || null),
+        // Millat va davlat nomlari ruscha keladi — lug'at orqali o'zbekchaga o'giriladi
+        nationality: translateNationality(d.nationality || null, d.nationalityId),
+        citizenship: translateCountry(d.citizenship || null, d.citizenshipId),
+        birth_country: translateCountry(d.birthCountry || null, d.birthCountryId),
         gender: Number(d.genderId) === 1 ? "M" : "F",
         document: [d.docSeria, d.docNumber].filter(Boolean).join(""),
         document_type: d.documentTypeId != null ? String(d.documentTypeId) : null,

@@ -1,6 +1,38 @@
 const reply = require("../../helpers/reply")
 const { Op } = require("sequelize")
 
+// Bugundan `years` yil oldingi sana -> "YYYY-MM-DD" (mahalliy vaqt bo'yicha).
+// birth_date string ISO formatda saqlangani uchun leksikografik solishtirish =
+// xronologik solishtirish.
+function isoYearsAgo(years) {
+    const d = new Date()
+    d.setHours(0, 0, 0, 0)
+    d.setFullYear(d.getFullYear() - years)
+    const y = d.getFullYear()
+    const m = String(d.getMonth() + 1).padStart(2, "0")
+    const day = String(d.getDate()).padStart(2, "0")
+    return `${y}-${m}-${day}`
+}
+
+// "YYYY-MM-DD" dan to'liq yoshni hisoblash (yaroqsiz bo'lsa "")
+function ageFromIso(s) {
+    if (!s) return ""
+    const d = new Date(s)
+    if (Number.isNaN(d.getTime())) return ""
+    const now = new Date()
+    let a = now.getFullYear() - d.getFullYear()
+    const m = now.getMonth() - d.getMonth()
+    if (m < 0 || (m === 0 && now.getDate() < d.getDate())) a--
+    return a >= 0 ? a : ""
+}
+
+// So'rovdan butun yosh qiymatini o'qish (bo'sh/yaroqsiz bo'lsa null)
+function readAge(v) {
+    if (v === undefined || v === null || v === "") return null
+    const n = Math.floor(Number(v))
+    return Number.isNaN(n) || n < 0 ? null : n
+}
+
 // Build the shared where-clause from query filters
 function buildWhere(req) {
     const where = {}
@@ -16,6 +48,19 @@ function buildWhere(req) {
     }
     if (req.query.region_id) where.region_id = Number(req.query.region_id)
     if (req.query.district_id) where.district_id = Number(req.query.district_id)
+
+    // Yosh filtri (to'liq yillarda). min_age <= yosh <= max_age.
+    //   yosh >= min_age  ->  birth_date <= (bugun - min_age yil)
+    //   yosh <= max_age  ->  birth_date  >  (bugun - (max_age+1) yil)
+    const minAge = readAge(req.query.min_age)
+    const maxAge = readAge(req.query.max_age)
+    if (minAge !== null || maxAge !== null) {
+        const cond = {}
+        if (minAge !== null) cond[Op.lte] = isoYearsAgo(minAge)
+        if (maxAge !== null) cond[Op.gt] = isoYearsAgo(maxAge + 1)
+        // birth_date bo'sh (null) yozuvlar yosh filtri ostida chiqmaydi
+        where.birth_date = { ...cond, [Op.ne]: null }
+    }
     if (req.query.start_date || req.query.end_date) {
         where.createdAt = {}
         if (req.query.start_date) where.createdAt[Op.gte] = new Date(req.query.start_date)
@@ -98,7 +143,7 @@ module.exports.exportParticipants = async (req, res) => {
 
         const headers = [
             "№", "Familiya", "Ism", "Otasining ismi", "JSHSHIR", "Tug'ilgan sana",
-            "Jinsi", "Hujjat", "Viloyat", "Tuman", "Telefon", "Ro'yxatdan o'tgan vaqt"
+            "Yosh", "Jinsi", "Hujjat", "Viloyat", "Tuman", "Telefon", "Ro'yxatdan o'tgan vaqt"
         ]
         const esc = (v) => {
             const s = (v === null || v === undefined) ? "" : String(v)
@@ -110,7 +155,7 @@ module.exports.exportParticipants = async (req, res) => {
             lines.push([
                 i + 1,
                 p.last_name, p.first_name, p.middle_name, p.pinfl, p.birth_date,
-                p.gender, p.document,
+                ageFromIso(p.birth_date), p.gender, p.document,
                 p.region ? p.region.name_uz : "",
                 p.district ? p.district.name_uz : "",
                 p.phone_number,

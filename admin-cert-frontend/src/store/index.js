@@ -87,13 +87,15 @@ const store = createStore({
 
     async fetchParticipants({ getters }, options = {}) {
       try {
-        const { searchWord, region_id, district_id, start_date, end_date, offset = 0, limit = 20 } = options
+        const { searchWord, region_id, district_id, start_date, end_date, min_age, max_age, offset = 0, limit = 20 } = options
         const params = { offset, limit }
         if (searchWord) params.searchWord = searchWord
         if (region_id) params.region_id = region_id
         if (district_id) params.district_id = district_id
         if (start_date) params.start_date = start_date
         if (end_date) params.end_date = end_date
+        if (min_age !== undefined && min_age !== null && min_age !== '') params.min_age = min_age
+        if (max_age !== undefined && max_age !== null && max_age !== '') params.max_age = max_age
 
         const res = await axios.get(`${baseUrl}/api/admin/participants`, {
           headers: { Authorization: getters.getToken },
@@ -127,6 +129,8 @@ const store = createStore({
         if (options.district_id) params.district_id = options.district_id
         if (options.start_date) params.start_date = options.start_date
         if (options.end_date) params.end_date = options.end_date
+        if (options.min_age !== undefined && options.min_age !== null && options.min_age !== '') params.min_age = options.min_age
+        if (options.max_age !== undefined && options.max_age !== null && options.max_age !== '') params.max_age = options.max_age
 
         const res = await axios.get(`${baseUrl}/api/admin/participants/export`, {
           headers: { Authorization: getters.getToken },
